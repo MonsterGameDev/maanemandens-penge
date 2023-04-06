@@ -1,4 +1,6 @@
+import './../../general.js';
 import './artikler.scss';
+
 
 console.log('artikler  online');
 

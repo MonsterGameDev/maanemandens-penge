@@ -2,7 +2,7 @@ const menu = document.createElement('template');
 menu.innerHTML = `
     <style>
         :host{
-            
+           
         }
 		/* Style the menu container */
 		nav {
@@ -16,6 +16,7 @@ menu.innerHTML = `
 			height: 50px;
 			background-color: black;
 			padding: 10px 200px;
+			border-bottom: 1px solid white;
 		}
 
 		/* Style the menu items */
@@ -67,25 +68,25 @@ menu.innerHTML = `
 	</style>
 
 	<nav>
-		<a href="#">Om foreningen</a>
-		<a href="#">Artikler</a>
-		<a href="#">Projekter</a>
-		<a href="#">Forestillinger</a>
-		<a href="#">Shop</a>
+		<a href="./om-foreningen.html">Om foreningen</a>
+		<a href="./artikler.html">Artikler</a>
+		<a href="./projekter.html">Projekter</a>
+		<a href="./forestillinger.html">Forestillinger</a>
+		<a href="./shop.html">Shop</a>
 	</nav>`
 
 
 
 
 class Menu extends HTMLElement {
-    constructor() {
-        super();
+	constructor() {
+		super();
 
-        // Get the template content and attach it to the shadow root
+		// Get the template content and attach it to the shadow root
 
-        const templateContent = menu.content;
-        this.attachShadow({ mode: 'open' }).appendChild(templateContent.cloneNode(true));
-    }
+		const templateContent = menu.content;
+		this.attachShadow({ mode: 'open' }).appendChild(templateContent.cloneNode(true));
+	}
 }
 
 // Define the "menu" custom element
