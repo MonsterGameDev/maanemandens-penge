@@ -1,1 +1,0 @@
-(()=>{"use strict";var e=document.querySelector("body"),n=document.createElement("h1");n.innerHTML="Hello World...!";var r=document.createElement("h2");r.innerHTML="secondary",e.appendChild(n),e.appendChild(r)})();

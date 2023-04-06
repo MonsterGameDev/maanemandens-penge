@@ -11,7 +11,7 @@ module.exports = {
         'shop': path.resolve(__dirname, 'src/pages/shop/shop.js'),
     },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, './dist'),
         clean: true,
     },
@@ -99,7 +99,7 @@ module.exports = {
             title: 'Shop - Ting du kan købe hos Månemandens Penge',
             filename: 'shop.html',
             template: 'src/pages/shop/shop.html',
-            chunks: ['projekter'],
+            chunks: ['shop'],
             minify: false,
         })
     ]
