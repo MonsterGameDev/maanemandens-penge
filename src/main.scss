@@ -1,3 +1,5 @@
+@import "./fonts/font";
+
 *,
 *::after,
 *::before {
@@ -8,4 +10,6 @@
 
 html {
   font-size: 62.5%;
+
+  --font-montserrat-regular: "Montserrat-Regular";
 }
