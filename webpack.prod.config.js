@@ -104,7 +104,7 @@ module.exports = {
             title: 'Shop - Ting du kan købe hos Månemandens Penge',
             filename: 'shop.html',
             template: 'src/pages/shop/shop.html',
-            chunks: ['projekter'],
+            chunks: ['shop'],
             minify: true,
         })
     ]
