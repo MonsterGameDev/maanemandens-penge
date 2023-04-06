@@ -1,0 +1,68 @@
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.[contenthash].js',
+        path: path.resolve(__dirname, './dist'),
+        clean: true,
+    },
+    mode: 'production',
+    module: {
+        rules: [
+            {
+                test: /\.(png|jpg|jpeg|webp)$/,
+                type: 'asset/resource'
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'], //['style-loader', 'css-loader']
+            },
+            {
+                test: /\.scss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] //['style-loader', 'css-loader', 'sass-loader']
+            },
+            { // erase this if babel fucks up
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/env'],  //compiles to ECMA5
+                        plugins: [] // array of specific hacks 
+                    }
+                }
+            },
+            { // template for htmlfilesd
+                test: /\.hbs$/,
+                use: [
+                    'handlebars-loader'
+                ]
+            },
+            {
+                test: /\.tff$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/',
+                    },
+                },
+            }
+
+        ]
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'styles.[contenthash].css',
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Månemandens Penge',
+            template: './src/templates/index.hbs',
+            description: 'Udbredelse af dukketeater'
+
+        })
+    ]
+}
