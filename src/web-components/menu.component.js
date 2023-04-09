@@ -1,34 +1,32 @@
 const menu = document.createElement('template');
 menu.innerHTML = `
     <style>
-        :host{
-           
-        }
 		/* Style the menu container */
 		nav {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			position: fixed;
+			z-index:100;
 			top: 0;
 			left: 0;
 			right: 0;
 			height: 50px;
-			background-color: black;
+			background-color: var(--menu-background-color);
 			padding: 10px 200px;
-			border-bottom: 1px solid white;
+			border-bottom: 1px solid var(--menu-font-color);
 		}
 
 		/* Style the menu items */
 		nav a {
-			color: white;
+			color: var(--menu-font-color);
 			text-align: center;
 			padding: 10px;
 			text-decoration: none;
 			font-weight: bold;
 			position: relative;
             text-transform: uppercase;
-            font-family: var(--font-montserrat-regular);
+            font-family: var(--menu-font-face);
             font-size: 18px;
 		}
 
@@ -37,7 +35,7 @@ menu.innerHTML = `
 			content: "";
 			position: absolute;
 			height: 2px;
-			background-color: #ffd700;
+			background-color: var(--menu-font-color);
 			opacity: 0;
 			transition: all 0.3s ease-in-out;
 			left: 0;
@@ -63,7 +61,7 @@ menu.innerHTML = `
 		}
 
 		nav a:hover {
-			color: #ffd700;
+			color: var(--menu-font-color);
 		}
 	</style>
 
