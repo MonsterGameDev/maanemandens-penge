@@ -1,0 +1,9 @@
+article {
+  position: relative;
+}
+
+.article-sub-heading {
+  font-size: var(--article-sub-heading-font-size);
+  color: var(--article-sub-heading-font-color);
+  font-family: var(--article-sub-heading-font-face);
+}
