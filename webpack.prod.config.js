@@ -10,6 +10,7 @@ module.exports = {
         'om-foreningen': path.resolve(__dirname, 'src/pages/om-foreningen/om-foreningen.js'),
         'projekter': path.resolve(__dirname, 'src/pages/projekter/projekter.js'),
         'shop': path.resolve(__dirname, 'src/pages/shop/shop.js'),
+        'article-bygge-projekt': path.resolve(__dirname, 'src/pages/artikler/bygge-projekt/bygge-projekt.js'),
     },
     output: {
         filename: 'bundle.[contenthash].js',
@@ -105,6 +106,13 @@ module.exports = {
             filename: 'shop.html',
             template: 'src/pages/shop/shop.html',
             chunks: ['shop'],
+            minify: true,
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Workshop - Byg dit eget teater',
+            filename: 'article-bygge-projekt',
+            template: 'src/pages/artikler/bygge-projekt/bygge-projekt.html',
+            chunks: ['article-bygge-projekt'],
             minify: true,
         })
     ]

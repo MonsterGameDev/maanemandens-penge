@@ -9,6 +9,10 @@ module.exports = {
         'om-foreningen': path.resolve(__dirname, 'src/pages/om-foreningen/om-foreningen.js'),
         'projekter': path.resolve(__dirname, 'src/pages/projekter/projekter.js'),
         'shop': path.resolve(__dirname, 'src/pages/shop/shop.js'),
+        'article-bygge-projekt': path.resolve(__dirname, 'src/pages/artikler/bygge-projekt/bygge-projekt.js'),
+        'maurisk-proscenium': path.resolve(__dirname, 'src/pages/artikler/maurisk-proscenium/maurisk-proscenium.js'),
+        'om-papirteater': path.resolve(__dirname, 'src/pages/artikler/om-papirteater/om-papirteater.js'),
+        'analog-leg': path.resolve(__dirname, 'src/pages/artikler/analog-leg/analog-leg.js'),
     },
     output: {
         filename: '[name].js',
@@ -100,6 +104,34 @@ module.exports = {
             filename: 'shop.html',
             template: 'src/pages/shop/shop.html',
             chunks: ['shop'],
+            minify: false,
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Workshop - Byg dit eget teater',
+            filename: 'article-bygge-projekt.html',
+            template: 'src/pages/artikler/bygge-projekt/bygge-projekt.html',
+            chunks: ['article-bygge-projekt'],
+            minify: false,
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Det mauriske Proscenium',
+            filename: 'article-maurisk-proscenium.html',
+            template: 'src/pages/artikler/maurisk-proscenium/maurisk-proscenium.html',
+            chunks: ['maurisk-proscenium'],
+            minify: false,
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Hvad er Papirteater',
+            filename: 'article-om-papirteater.html',
+            template: 'src/pages/artikler/om-papirteater/om-papirteater.html',
+            chunks: ['om-papirteater'],
+            minify: false,
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Analog-leg - børn og skærmtid',
+            filename: 'article-analog-leg.html',
+            template: 'src/pages/artikler/analog-leg/analog-leg.html',
+            chunks: ['analog-leg'],
             minify: false,
         })
     ]
