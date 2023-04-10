@@ -6,4 +6,38 @@ article {
   font-size: var(--article-sub-heading-font-size);
   color: var(--article-sub-heading-font-color);
   font-family: var(--article-sub-heading-font-face);
+  margin: 2rem 0;
+}
+
+.img-half {
+  width: 40%;
+  height: auto;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 0 1.5rem;
+}
+.float-left {
+  float: left;
+  margin: 0 1.5rem 0 0;
+}
+
+.img-right {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 7rem;
+  img {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .img-right {
+    flex-direction: column-reverse;
+    img {
+      width: 100%;
+      margin: 0;
+    }
+  }
 }

@@ -28,6 +28,7 @@ articleTemplate.innerHTML = `
         height: 50vw;
         background-image: var(--article-banner-image);
         background-size:cover;
+        background-position: center;
         margin-bottom: 4rem;
 
         

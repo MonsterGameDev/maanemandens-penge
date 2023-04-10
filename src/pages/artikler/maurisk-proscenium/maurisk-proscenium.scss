@@ -2,5 +2,44 @@
 @import "./../scss/article-page.scss";
 
 :root {
-  --article-banner-image: url(/src/img/artikler/bygge-projekt/w1-banner.webp);
+  --article-banner-image: url(/src/img/artikler/mauriske-proscenium/banner-wood-all.webp);
+}
+
+#proscenium {
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  img {
+    width: 20%;
+    overflow: hidden;
+    border: 2px solid var(--color-primary-2);
+    border-radius: 5px;
+  }
+}
+
+#step1 {
+  opacity: 1;
+}
+
+.image-fader-container {
+  position: relative;
+  width: 30vw;
+  height: 30vw;
+  margin: 0 auto;
+
+  ph-image-fader {
+    width: 100%;
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  .image-fader-container {
+    width: 70vw;
+    height: 70vw;
+  }
 }
