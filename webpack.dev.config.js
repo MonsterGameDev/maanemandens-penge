@@ -9,10 +9,11 @@ module.exports = {
         'om-foreningen': path.resolve(__dirname, 'src/pages/om-foreningen/om-foreningen.js'),
         'projekter': path.resolve(__dirname, 'src/pages/projekter/projekter.js'),
         'shop': path.resolve(__dirname, 'src/pages/shop/shop.js'),
-        'article-bygge-projekt': path.resolve(__dirname, 'src/pages/artikler/bygge-projekt/bygge-projekt.js'),
-        'maurisk-proscenium': path.resolve(__dirname, 'src/pages/artikler/maurisk-proscenium/maurisk-proscenium.js'),
         'om-papirteater': path.resolve(__dirname, 'src/pages/artikler/om-papirteater/om-papirteater.js'),
         'analog-leg': path.resolve(__dirname, 'src/pages/artikler/analog-leg/analog-leg.js'),
+        'article-bygge-projekt': path.resolve(__dirname, 'src/pages/projekter/bygge-projekt/bygge-projekt.js'),
+        'maurisk-proscenium': path.resolve(__dirname, 'src/pages/projekter/maurisk-proscenium/maurisk-proscenium.js'),
+
     },
     output: {
         filename: '[name].js',
@@ -109,14 +110,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Workshop - Byg dit eget teater',
             filename: 'article-bygge-projekt.html',
-            template: 'src/pages/artikler/bygge-projekt/bygge-projekt.html',
+            template: 'src/pages/projekter/bygge-projekt/bygge-projekt.html',
             chunks: ['article-bygge-projekt'],
             minify: false,
         }),
         new HtmlWebpackPlugin({
             title: 'Det mauriske Proscenium',
             filename: 'article-maurisk-proscenium.html',
-            template: 'src/pages/artikler/maurisk-proscenium/maurisk-proscenium.html',
+            template: 'src/pages/projekter/maurisk-proscenium/maurisk-proscenium.html',
             chunks: ['maurisk-proscenium'],
             minify: false,
         }),
