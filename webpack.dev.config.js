@@ -13,6 +13,8 @@ module.exports = {
         'analog-leg': path.resolve(__dirname, 'src/pages/artikler/analog-leg/analog-leg.js'),
         'article-bygge-projekt': path.resolve(__dirname, 'src/pages/projekter/bygge-projekt/bygge-projekt.js'),
         'maurisk-proscenium': path.resolve(__dirname, 'src/pages/projekter/maurisk-proscenium/maurisk-proscenium.js'),
+        'om-dmf': path.resolve(__dirname, 'src/pages/artikler/om-dmf/om-dmf.js'),
+        'youtube-channel': path.resolve(__dirname, 'src/pages/projekter/youtube-channel/youtube-channel.js'),
 
     },
     output: {
@@ -109,14 +111,14 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: 'Workshop - Byg dit eget teater',
-            filename: 'article-bygge-projekt.html',
+            filename: 'project-bygge-projekt.html',
             template: 'src/pages/projekter/bygge-projekt/bygge-projekt.html',
             chunks: ['article-bygge-projekt'],
             minify: false,
         }),
         new HtmlWebpackPlugin({
             title: 'Det mauriske Proscenium',
-            filename: 'article-maurisk-proscenium.html',
+            filename: 'project-maurisk-proscenium.html',
             template: 'src/pages/projekter/maurisk-proscenium/maurisk-proscenium.html',
             chunks: ['maurisk-proscenium'],
             minify: false,
@@ -129,10 +131,17 @@ module.exports = {
             minify: false,
         }),
         new HtmlWebpackPlugin({
-            title: 'Analog-leg - børn og skærmtid',
-            filename: 'article-analog-leg.html',
-            template: 'src/pages/artikler/analog-leg/analog-leg.html',
-            chunks: ['analog-leg'],
+            title: 'Om Dansk Modelteater Forening',
+            filename: 'article-om-dmf.html',
+            template: 'src/pages/artikler/om-dmf/om-dmf.html',
+            chunks: ['om-dmf'],
+            minify: false,
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Youtube Channel',
+            filename: 'project-youtube-channel.html',
+            template: 'src/pages/projekter/youtube-channel/youtube-channel.html',
+            chunks: ['youtube-channel'],
             minify: false,
         })
     ]

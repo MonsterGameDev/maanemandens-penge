@@ -8,6 +8,61 @@
   </head>
   <body>
     <ph-menu></ph-menu>
-    <h1>Projekter</h1>
+    <div class="main">
+      <h1>Projekter</h1>
+      <hr />
+      <ph-image-card
+        id="card1"
+        onclick="location.href='./project-youtube-channel.html'"
+      >
+        <span slot="card-title">Cardboard Magic</span>
+        <span slot="card-description">
+          <p>
+            Cardboard Magic er en YouTube kanal med masser af videoer om modelteater
+          </p>
+
+          <p>
+             Hvordan bygger du et dukketeater<br />
+              Hvordan skærer du kulisser ud<br />
+              Hvordan sættes en forestilling op<br />
+             Hvad med lys...?<br />
+            </ul>
+           
+          </p>
+          <p>Se, Subscribe og Del...</p>
+        </span>
+      </ph-image-card>
+
+      <ph-image-card
+        id="card2"
+        onclick="location.href='./project-bygge-projekt.html'"
+      >
+        <span slot="card-title">Workshop</span>
+        <span slot="card-description">
+          <p>
+            Månemandens Penge arrangerer løbende workshops for børn og medbragte voksne.
+          </p>
+          <p style="font-size: 1.5rem">
+            Byg dit eget dukketeater og tag det med hjem
+          </p>
+          <p>
+            Mød op til en kreativ og hyggelig byggedag. Der hamres, limes, saves, slibes og klistres, og du går hjem med dit helt eget hjemmelavede dukketeater
+          </p>
+        </span>
+      </ph-image-card>
+
+      <ph-image-card id="card3" onclick="location.href='./project-maurisk-proscenium.html'">
+        <span slot="card-title">Det Mauriske Proscenium</span>
+        <span slot="card-description">
+          <p>Et bygge projekt frit over Alfreds Jacobsens F-Proscenium: Det Mauriske Proscenium.</p>
+          <p>
+            Et meget smukt proscenium, genskabt i 3D i ægte træ lakeret med forskellige strålende pigmenter.
+          </p>
+          <p>
+            Projektet er stadig under udvikling, men her kan du følge med i, hvordan det hele skrider frem.
+          </p>
+        </span>
+      </ph-image-card>
+    </div>
   </body>
 </html>

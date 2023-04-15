@@ -1,5 +1,7 @@
-import ANALOG_LEG from './banner-analog-leg.webp';
+import ANALOG_LEG from './banner-analog-leg.webp';;
+import DIGITAL_KIDS from './digital-kids.webp';
 
-export default {
-    ANALOG_LEG
+export {
+    ANALOG_LEG,
+    DIGITAL_KIDS
 }

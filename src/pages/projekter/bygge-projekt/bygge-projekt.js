@@ -3,7 +3,7 @@ import './bygge-projekt.scss';
 import '/src/general.js';
 import '/src/web-components/article.component.js';
 
-import * as BYGGE_PICS from '../../../img/artikler/bygge-projekt';
+import * as BYGGE_PICS from '../../../img/projekter/bygge-projekt';
 
 addEventListener("DOMContentLoaded", (event) => {
     const pic1 = document.getElementById('pic1');

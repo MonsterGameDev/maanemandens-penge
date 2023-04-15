@@ -4,6 +4,7 @@ imageCard.innerHTML = `
     :host {
         display: block;
         margin: 16px;
+        --card-text-color: black
       
       }
       .card {
@@ -11,9 +12,14 @@ imageCard.innerHTML = `
         max-width: 300px;
         height: 100%;
         border-radius: 10px;
-        background-color: white;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease-in-out;
+
+        display: flex;
+        flex-flow: column nowrap;
+        flex-grow: stretch;
+
+        overflow: hidden;
       }
       .card:hover {
         transform: translateY(-5px);
@@ -23,10 +29,9 @@ imageCard.innerHTML = `
         width: 100%;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        background-image: var(--card-background-image);
         background-size: cover;
         background-position: center;
-        height: 33%;
+        height: 40%;
 
       }
       .card-content {
@@ -58,12 +63,35 @@ imageCard.innerHTML = `
 
 
 class ImageCard extends HTMLElement {
+
+  set config(val = {}) {
+    console.log('setting config: ', val)
+    this._config = val;
+
+    this.render();
+  }
+
+  get config() {
+    return this._config;
+  }
+
   constructor() {
     super();
 
     const templateContent = imageCard.content;
     this.attachShadow({ mode: 'open' }).appendChild(templateContent.cloneNode(true));
   }
-}
 
+  render() {
+    const cardBackground = this._config.cardBackground;
+    this.shadowRoot.querySelector('.card-content').style.background = cardBackground;
+
+    const cardTextColor = this._config.cardTextColor;
+    this.shadowRoot.querySelector('.card-content').style.color = cardTextColor;
+
+    const topImageUrl = this._config.topImageUrl;
+    this.shadowRoot.querySelector('.image-top').style.backgroundImage = 'url(' + topImageUrl + ')';
+
+  }
+}
 customElements.define('ph-image-card', ImageCard);
