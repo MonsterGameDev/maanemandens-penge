@@ -2,5 +2,9 @@
 @import "./../scss/article-page.scss";
 
 :root {
-  --article-banner-image: url(/src/img/artikler/bygge-projekt/w1-banner.webp);
+  --article-banner-image: url(/src/img/artikler/analog-leg/digital-kids.webp);
+}
+
+img {
+  width: 100%;
 }

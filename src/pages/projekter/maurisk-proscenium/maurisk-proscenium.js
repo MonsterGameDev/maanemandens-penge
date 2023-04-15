@@ -4,7 +4,7 @@ import '/src/general.js';
 import '../../../web-components/article.component.js';
 import '../../../web-components/image-fader.component.js'
 
-import * as PROSCENIUM from './../../../img/artikler/mauriske-proscenium/index.js'
+import * as PROSCENIUM from '../../../img/artikler/mauriske-proscenium/index.js'
 
 addEventListener("DOMContentLoaded", (event) => {
     document.getElementById('ark-400').src = PROSCENIUM.PROSCENIUM;

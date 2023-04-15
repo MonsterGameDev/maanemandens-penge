@@ -1,4 +1,5 @@
 import './../../general.js';
+import './../../web-components/card.component.js'
 import './artikler.scss';
 
 

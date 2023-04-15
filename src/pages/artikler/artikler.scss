@@ -1,1 +1,16 @@
 @import "./../../main.scss";
+
+:root {
+  --card-background-image: url("./../../img/artikler/analog-leg/digital-kids.webp");
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  ph-image-card {
+    height: 500px;
+  }
+}
