@@ -1,1 +1,1 @@
-import './web-components/menu.component.js';
+import './web-components/menu-component/menu.component.js';

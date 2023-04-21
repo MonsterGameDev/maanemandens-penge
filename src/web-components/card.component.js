@@ -65,7 +65,6 @@ imageCard.innerHTML = `
 class ImageCard extends HTMLElement {
 
   set config(val = {}) {
-    console.log('setting config: ', val)
     this._config = val;
 
     this.render();

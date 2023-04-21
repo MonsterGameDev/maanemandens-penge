@@ -24,7 +24,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpg|jpeg|webp)$/,
+                test: /\.(png|jpg|jpeg|webp|svg)$/,
                 type: 'asset/resource'
             },
             {

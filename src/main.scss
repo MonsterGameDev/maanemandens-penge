@@ -67,6 +67,8 @@
   --color-secondary-2-2: #d1867b;
   --color-secondary-2-3: #c11a00;
   --color-secondary-2-4: #b31800;
+
+  --media-query-device-1: 952px;
 }
 
 body {
@@ -79,12 +81,11 @@ body {
   min-height: 100vh;
 }
 
-@media (max-width: 1024px) {
+@media only screen and (max-width: 952px) {
   body {
-    padding: 7rem 0 2rem 0;
+    padding: 0 0 2rem 0;
   }
 }
-
 .main {
   display: flex;
   flex-flow: column nowrap;
@@ -92,13 +93,13 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color: var(--page-background-color);
-  padding: 2rem;
+  padding: 0rem;
 }
 
 h1 {
   font-family: var(--font-sigmarone-regular);
   color: var(--color-primary-1);
-  font-size: 5rem;
+  font-size: calc(3vw + 2rem);
   color: var(--color-secondary-1-1);
 }
 
