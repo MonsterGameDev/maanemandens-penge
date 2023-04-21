@@ -67,7 +67,7 @@ articleTemplate.innerHTML = `
         width:20%;
     }
     
-    @media (max-width: 1024px){
+    @media (max-width: 992px){
         .content-left-column {display: none}
         .content-center-column {width:100%}
         .content-right-column {display: none;}

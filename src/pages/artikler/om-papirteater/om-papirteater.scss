@@ -68,7 +68,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 952) {
   .proscenium-container {
     max-width: 100%;
   }
@@ -81,14 +81,14 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 552px) {
   .scene-size-container {
     height: 25vh;
     margin: 0 auto;
   }
 }
 
-@media (min-width: 1350px) {
+@media (min-width: 1200px) {
   .scene-size-container {
     transform: scale(1.1);
     width: 100%;

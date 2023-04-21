@@ -32,7 +32,7 @@ article {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: var(--breakpoint-md)) {
   .img-right {
     flex-direction: column-reverse;
     img {

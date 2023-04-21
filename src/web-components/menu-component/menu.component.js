@@ -71,8 +71,8 @@ menu.innerHTML = `
 		.burger-button {
 			display: none;
 		}
-
-		@media only screen and (max-width: 952px) {
+		
+		@media only screen and (max-width: 992px) {
 			* {
 				box-sizing: border-box;
 			}
@@ -80,11 +80,12 @@ menu.innerHTML = `
 				width: 100%;
 				height: 100vh;
 				transform: translateX(-100vw);
+				opacity: .5;
 				flex-direction: column;
 				justify-content: space-evenly;
 				padding: 15vh 0;
 
-				transition: transform 1s .5s ease-out;
+				transition: all 1s .5s ease-out;
 				z-index: 1;
 			}
 			.burger-button {
@@ -113,9 +114,19 @@ menu.innerHTML = `
 			}
 
 			.open {
-				transform: translateX(0)
+				transform: translateX(0);
+				opacity: 1;
 			}
 			
+		}
+
+		@media only screen and (max-width: 768px) {}
+		@media only screen and (max-width: 552px) {
+			
+			.burger-button {
+				width: 4rem;
+				margin: 1rem;
+			}
 		}
 
 	</style>
