@@ -3,20 +3,28 @@
 const articleTemplate = document.createElement('template');
 articleTemplate.innerHTML = `
     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;  
+    }
     :host {
         width: 100%;
-       
+        --size-m: 2rem;
     }
     .category {
         display: block;
         text-align: center;
         font-size: 2rem;
+        margin: var(--size-s) 0;
     }
     h1 {
         display: block;
         width:100%;
         text-align: center;
         font-weight: bold;
+        margin: var(--size-s) 0;
+
         
         font-family: var(--heading-font-face);
         font-size: var(--heading-font-size);
@@ -37,6 +45,8 @@ articleTemplate.innerHTML = `
         display: flex;
         justify-content: space-between;
         width: 100%;
+        
+        
     }
     .content-left-column {
         display: inline-block;
@@ -65,13 +75,21 @@ articleTemplate.innerHTML = `
     .content-right-column {
         display: inline-block;
         width:20%;
+        
     }
     
-    @media (max-width: 992px){
-        .content-left-column {display: none}
-        .content-center-column {width:100%}
+    @media only screen and (max-width: 992px) {
         .content-right-column {display: none;}
-      }
+        .content-left-column {display: none}
+        .content-center-column {
+            width:100%;
+        }
+        
+        .article-content {
+            padding: 0 var(--size-m);
+        }
+
+    }
     
 	</style>
 

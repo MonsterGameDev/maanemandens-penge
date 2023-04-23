@@ -80,18 +80,18 @@ menu.innerHTML = `
 				width: 100%;
 				height: 100vh;
 				transform: translateX(-100vw);
-				opacity: .5;
+				opacity: .2;
 				flex-direction: column;
 				justify-content: space-evenly;
 				padding: 15vh 0;
 
-				transition: all 1s .5s ease-out;
+				transition: all .8s .2s ease-out;
 				z-index: 1;
 			}
 			.burger-button {
 				display: inline-block;
 
-				position: absolute;
+				position: fixed;
 				top: 0;
 				right: 0;
 
@@ -147,7 +147,6 @@ class Menu extends HTMLElement {
 	constructor() {
 		super();
 
-		console.log('Constructor');
 		const templateContent = menu.content;
 		this.attachShadow({ mode: 'open' }).appendChild(templateContent.cloneNode(true));
 

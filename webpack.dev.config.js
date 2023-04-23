@@ -138,6 +138,13 @@ module.exports = {
             minify: false,
         }),
         new HtmlWebpackPlugin({
+            title: 'Analog leg og udvikling',
+            filename: 'article-analog-leg.html',
+            template: 'src/pages/artikler/analog-leg/analog-leg.html',
+            chunks: ['analog-leg'],
+            minify: false,
+        }),
+        new HtmlWebpackPlugin({
             title: 'Youtube Channel',
             filename: 'project-youtube-channel.html',
             template: 'src/pages/projekter/youtube-channel/youtube-channel.html',

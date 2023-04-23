@@ -45,6 +45,16 @@
   --font-lifesavers-regular: "LifeSavers-Regular";
 
   //*************************************************
+  // sizes
+  //*************************************************
+
+  --size-xs: 0.5rem;
+  --size-s: 1rem;
+  --size-m: 2rem;
+  --size-l: 4rem;
+  --size-xl: 6rem;
+
+  //*************************************************
   // COLOR:SCHEME
   //*************************************************
 
@@ -123,6 +133,7 @@ article p {
 /* Extra small (mobile) */
 @media only screen and (max-width: 575px) {
 }
+
 @media only screen and (max-width: 400px) {
   h1 {
     font-size: calc(1vw + 2rem);

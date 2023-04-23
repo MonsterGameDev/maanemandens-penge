@@ -1,21 +1,24 @@
 import './om-foreningen.scss';
 import './../../general.js';
 
-const sectionTop = document.querySelector('.section-om-foreningen');
-const cardArray = [1, 2, 3, 4];
+import './../../web-components/article.component.js'
 
-cardArray.forEach((card, i) => {
-    const cardContainer = document.createElement('div');
-    cardContainer.classList.add('card-small-container');
+    // const main = document.querySelector('.main');
 
-    const component = document.createElement('div');
-    component.classList.add('card');
-    component.classList.add('card' + i);
-    cardContainer.append(component);
+    // const cardArray = [1, 2, 3, 4];
 
-    sectionTop.appendChild(cardContainer);
+    // cardArray.forEach((card, i) => {
+    //     const cardContainer = document.createElement('div');
+    //     cardContainer.classList.add('card-small-container');
 
-})
+    //     const component = document.createElement('div');
+    //     component.classList.add('card');
+    //     component.classList.add('card' + i);
+    //     cardContainer.append(component);
+
+    //     main.appendChild(cardContainer);
+
+    // })
 
 
     ;

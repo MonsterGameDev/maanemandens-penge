@@ -1,3 +1,4 @@
 import './forestillinger.scss';
 import './../../general.js';
-console.log('forestillinger online')
+
+import './../../web-components/compact-card.component.js';
