@@ -71,6 +71,22 @@ menu.innerHTML = `
 		.burger-button {
 			display: none;
 		}
+
+		.back-button-container {
+			width: 30px;
+			cursor: pointer;
+			position: fixed;
+			top: 0;
+			left: 0;
+			margin: var(--size-m);
+			z-index: 1000;
+
+		}
+
+		.svg-stroke-color {
+			stroke: var(--color-secondary-1-1);
+			fill: var(--color-secondary-1-1);
+		}
 		
 		@media only screen and (max-width: 992px) {
 			* {
@@ -90,6 +106,7 @@ menu.innerHTML = `
 			}
 			.burger-button {
 				display: inline-block;
+				cursor: pointer;
 
 				position: fixed;
 				top: 0;
@@ -104,14 +121,7 @@ menu.innerHTML = `
 
 				z-index: 100;
 			}
-
-			.burger-button:hover {
-				curson: pointer;
-			}
-			.svg-stroke-color {
-				stroke: var(--color-secondary-1-1);
-				fill: var(--color-secondary-1-1);
-			}
+			
 
 			.open {
 				transform: translateX(0);
@@ -130,6 +140,10 @@ menu.innerHTML = `
 		}
 
 	</style>
+	<div class="back-button-container">
+	<svg class= "back-button svg-stroke-color" 
+		fill="#000000"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M222.927 580.115l301.354 328.512c24.354 28.708 20.825 71.724-7.883 96.078s-71.724 20.825-96.078-7.883L19.576 559.963a67.846 67.846 0 01-13.784-20.022 68.03 68.03 0 01-5.977-29.488l.001-.063a68.343 68.343 0 017.265-29.134 68.28 68.28 0 011.384-2.6 67.59 67.59 0 0110.102-13.687L429.966 21.113c25.592-27.611 68.721-29.247 96.331-3.656s29.247 68.721 3.656 96.331L224.088 443.784h730.46c37.647 0 68.166 30.519 68.166 68.166s-30.519 68.166-68.166 68.166H222.927z"/></svg>
+	</div>
 	<div class="burger-button"></div>
 	<nav>
 		<a href="./om-foreningen.html">Om foreningen</a>
@@ -184,6 +198,11 @@ class Menu extends HTMLElement {
 	}
 
 	setupEventListners() {
+		const backButton = this.shadowRoot.querySelector('.back-button-container');
+		if (!!backButton)
+			backButton.addEventListener('click', () => {
+				history.back();
+			});
 		this.shadowRoot.querySelector('.burger-button').addEventListener('click', () => {
 
 			if (this.menuOpen) {
@@ -198,87 +217,6 @@ class Menu extends HTMLElement {
 
 		})
 	}
-
-	// connectedCallback() {
-	// 	const scaleBurgerLineKF = [
-	// 		{
-	// 			opacity: 1,
-	// 			transform: 'scaleY(1)'
-	// 		},
-	// 		{
-	// 			opacity: 0,
-	// 			transform: 'scaleY(0)'
-	// 		},
-	// 	];
-	// 	const scaleBurgerCrossKF = [
-	// 		{
-	// 			opacity: 0,
-	// 			transform: 'rotateZ(-45deg) scale(0)'
-	// 		},
-	// 		{
-	// 			opacity: 1,
-	// 			transform: 'rotateZ(-45deg) scale(1)'
-	// 		},
-	// 	];
-
-	// 	const burgerLine = this.shadowRoot.querySelector('.burger-line');
-	// 	const burgerCross = this.shadowRoot.querySelector('.burger-cross');
-	// 	const burgerLineAnimation = burgerLine.animate(scaleBurgerLineKF, {
-	// 		delay: 200,
-	// 		duration: 500,
-	// 		easing: 'ease-out',
-	// 		fill: 'forwards',
-	// 	});
-	// 	burgerLineAnimation.pause();
-	// 	const burgerCrossAnimation = burgerCross.animate(scaleBurgerCrossKF, {
-	// 		delay: 200,
-	// 		duration: 500,
-	// 		easing: 'ease-out',
-	// 		fill: 'forwards',
-	// 	});
-	// 	burgerCrossAnimation.pause();
-
-	// 	const burgerLineAnimationReverse = burgerLine.animate(scaleBurgerLineKF, {
-	// 		delay: 200,
-	// 		duration: 500,
-	// 		easing: 'ease-out',
-	// 		fill: 'forwards',
-	// 		direction: 'reverse'
-	// 	});
-	// 	burgerLineAnimationReverse.pause();
-	// 	const burgerCrossAnimationReverse = burgerCross.animate(scaleBurgerCrossKF, {
-	// 		delay: 200,
-	// 		duration: 500,
-	// 		easing: 'ease-out',
-	// 		fill: 'forwards',
-	// 		direction: 'reverse'
-	// 	});
-	// 	burgerCrossAnimationReverse.pause();
-
-	// 	// this.toggle = (e) => {
-	// 	// 	if (!this.menuOpen) {
-
-	// 	// 		burgerLineAnimation.play();
-	// 	// 		burgerLineAnimation.onfinish = () => {
-	// 	// 			burgerCrossAnimation.play();
-	// 	// 		};
-	// 	// 		this.menuOpen = true;
-	// 	// 	} else {
-	// 	// 		burgerCrossAnimationReverse.play();
-	// 	// 		burgerCrossAnimationReverse.onfinish = () => {
-	// 	// 			burgerLineAnimationReverse.play()
-	// 	// 		}
-	// 	// 		this.menuOpen = false;
-	// 	// 	}
-
-	// 	// };
-
-	// 	this.burgerButton = this.shadowRoot.querySelector('.burger-button');
-	// 	this.burgerButton.addEventListener('click', () => {});
-
-	// }
-
-
 
 
 

@@ -121,6 +121,9 @@ article p {
   body {
     padding: 0 0 2rem 0;
   }
+  .main {
+    padding-top: var(--size-m);
+  }
 }
 
 /* Medium (small laptop) */
@@ -131,11 +134,9 @@ article p {
 }
 
 /* Extra small (mobile) */
-@media only screen and (max-width: 575px) {
-}
-
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 552px) {
   h1 {
     font-size: calc(1vw + 2rem);
+    margin: 0 0 var(--size-s) 0;
   }
 }
