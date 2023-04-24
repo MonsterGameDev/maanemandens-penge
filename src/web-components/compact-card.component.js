@@ -57,7 +57,7 @@ class CompactCardComponent extends HTMLElement {
     connectedCallback() {
         this.registerEvents();
 
-        if (this._config.backgroundImage) {
+        if (!!this._config?.backgroundImage) {
             this.shadowRoot.querySelector('.compact-card').style.backgroundImage = this._config.backgroundImage
         }
 

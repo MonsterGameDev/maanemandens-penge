@@ -203,20 +203,25 @@ class Menu extends HTMLElement {
 			backButton.addEventListener('click', () => {
 				history.back();
 			});
-		this.shadowRoot.querySelector('.burger-button').addEventListener('click', () => {
+		this.shadowRoot.querySelector('.burger-button').addEventListener('click', this.toggleMenu);
 
-			if (this.menuOpen) {
-				this.navMenu.classList.remove('open');
-				this.loadOpenMenuIcon();
-			} else {
-				this.navMenu.classList.add('open');
-				this.loadCloseMenuIcon();
-			}
-
-			this.menuOpen = !this.menuOpen;
-
-		})
+		this.shadowRoot.querySelectorAll('a').forEach(entry => entry.addEventListener('click', this.toggleMenu));
 	}
+
+	toggleMenu = () => {
+		console.log('toggleMenu', this.menuOpen);
+
+		if (this.menuOpen) {
+			this.navMenu.classList.remove('open');
+			this.loadOpenMenuIcon();
+		} else {
+			this.navMenu.classList.add('open');
+			this.loadCloseMenuIcon();
+		}
+
+		this.menuOpen = !this.menuOpen;
+
+	};
 
 
 
