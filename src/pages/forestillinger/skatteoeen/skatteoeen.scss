@@ -1,0 +1,27 @@
+@import "./../../../main.scss";
+@import "./../../artikler/scss/article-page";
+
+:root {
+  --article-banner-image: url(/src/img/forestillinger/daekket-uvejr.jpg);
+}
+body {
+}
+img#img1 {
+  margin-bottom: 2rem;
+}
+
+.image-fader-container {
+  position: relative;
+  width: 100%;
+
+  margin: 0 auto;
+
+  ph-image-fader {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 992px) {
+}

@@ -15,6 +15,9 @@ module.exports = {
         'maurisk-proscenium': path.resolve(__dirname, 'src/pages/projekter/maurisk-proscenium/maurisk-proscenium.js'),
         'om-dmf': path.resolve(__dirname, 'src/pages/artikler/om-dmf/om-dmf.js'),
         'youtube-channel': path.resolve(__dirname, 'src/pages/projekter/youtube-channel/youtube-channel.js'),
+        'de-tre-musketerer': path.resolve(__dirname, 'src/pages/forestillinger/de-tre-musketerer/de-tre-musketerer.js'),
+        'noeddebo-praestegaard': path.resolve(__dirname, 'src/pages/forestillinger/noeddebo-praestegaard/noeddebo-praestegaard.js'),
+        'skatteoeen': path.resolve(__dirname, 'src/pages/forestillinger/skatteoeen/skatteoeen.js'),
 
     },
     output: {
@@ -149,6 +152,27 @@ module.exports = {
             filename: 'project-youtube-channel.html',
             template: 'src/pages/projekter/youtube-channel/youtube-channel.html',
             chunks: ['youtube-channel'],
+            minify: false,
+        }),
+        new HtmlWebpackPlugin({
+            title: 'De tre Musketerer',
+            filename: 'forestilling-de-tre-musketerer.html',
+            template: 'src/pages/forestillinger/de-tre-musketerer/de-tre-musketerer.html',
+            chunks: ['de-tre-musketerer'],
+            minify: false,
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Nøddebo Præstegård',
+            filename: 'forestilling-noeddebo-praestegaard.html',
+            template: 'src/pages/forestillinger/noeddebo-praestegaard/noeddebo-praestegaard.html',
+            chunks: ['noeddebo-praestegaard'],
+            minify: false,
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Skatteøen',
+            filename: 'forestilling-skatteoeen.html',
+            template: 'src/pages/forestillinger/skatteoeen/skatteoeen.html',
+            chunks: ['skatteoeen'],
             minify: false,
         })
     ]

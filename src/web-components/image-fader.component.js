@@ -5,13 +5,19 @@ imageFader.innerHTML = `
        
         width: 100%;
 
-        .image-fader-image {
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+        
+    }
+
+    .image-fader-image {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .image-fader-image:first-of-type {
+        position: relative;
     }
 	</style>
     <div class="animation-container"></div>

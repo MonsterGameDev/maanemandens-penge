@@ -1,24 +1,27 @@
 @import "./../../main.scss";
 
-.compact-card-list {
+.main {
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  ph-compact-card {
-    width: 45%;
-  }
-}
+  align-items: flex-start;
 
-@media (max-width: 992px) {
-  .compact-card-list {
-    ph-compact-card {
-    }
+  hr {
+    width: 100%;
+    height: 2px;
+    margin-bottom: 3rem;
   }
-}
-@media (max-width: 552px) {
-  .compact-card-list {
-    ph-compact-card {
-      width: 100%;
+
+  ph-image-card {
+    height: 500px;
+    margin-bottom: 3rem;
+    span[slot="card-title"] {
+      font-size: rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
     }
   }
 }
