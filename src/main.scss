@@ -121,6 +121,19 @@ a:hover {
   color: var(--color-secondary-2-2);
 }
 
+ul.normal {
+  margin: var(--size-m);
+  li {
+    margin-bottom: var(--size-m);
+  }
+}
+
+quote {
+  display: block;
+  margin: var(--size-m);
+  font-style: italic;
+}
+
 /* Extra large (desktop) */
 @media only screen and (max-width: 1200px) {
 }
