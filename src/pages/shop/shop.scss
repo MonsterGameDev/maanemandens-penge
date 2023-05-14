@@ -34,6 +34,14 @@
   margin-bottom: var(--size-l);
 }
 
+.tilbud {
+  color: var(--color-secondary-2-3);
+  font-style: italic;
+  margin-bottom: var(--size-l);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 992px) {
   ph-shop-item {
     width: 100% !important;
