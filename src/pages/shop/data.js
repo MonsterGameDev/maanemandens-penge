@@ -136,7 +136,7 @@ const shopItems_ProsceniumOgDraperier = [
     {
         image: IMAGES.PROSCENIUM_M_LOGGIA,
         header: 'Proscenium: Det kgl. Teater med Loggia',
-        text: 'Dette smukke ark, der viser Det kgl. Teater set både indefra or udefra, er list specielt idet det aldrig har været udgivet i D-størrelse før Månemandens Penge i samarbejde med Oldfux valgte det som udgangspunkt for vores D-teater.',
+        text: 'Dette smukke ark, der viser Det kgl. Teater set både indefra og udefra, er lidt specielt idet det aldrig har været udgivet i D-størrelse før Månemandens Penge i samarbejde med Oldfux valgte det som udgangspunkt for vores D-teater.',
         price: 75
     },
     {
