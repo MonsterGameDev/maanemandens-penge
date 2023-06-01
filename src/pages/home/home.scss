@@ -1,1 +1,144 @@
 @import "./../../main.scss";
+
+* {
+  --compact-card-height: 15rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.parallax-1,
+.parallax-2,
+.parallax-3,
+.parallax-4,
+.parallax-5 {
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.parallax-5 {
+  background-size: contain;
+}
+.parallax-1,
+.parallax-2,
+.parallax-3,
+.parallax-4 {
+  background-size: cover;
+}
+
+.main {
+  height: 100vh;
+  padding: 0 2rem;
+}
+
+.deck-2,
+.deck-3,
+.deck-4,
+.deck-5 {
+  min-height: 50vh;
+  //height: 50vh !important   ;
+}
+
+.logo {
+  width: 25rem;
+  margin-bottom: var(--size-m);
+}
+
+.quote-component-container {
+  width: 55%;
+  max-width: 675px;
+  margin-bottom: var(--size-xxl);
+}
+
+.deck {
+  width: 100%;
+  min-height: 200px;
+  background-color: #044648;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--size-m) 0;
+
+  ph-testimonial-image-circle {
+    --circle-diameter: 140px;
+    --background-color: transparent;
+    --font-family: var(--general-font-face);
+    --font-color: var(--general-font-color);
+    --heading-font-family: var(--general-font-face);
+
+    width: 55%;
+    max-width: 675px;
+  }
+}
+
+.teasers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  ph-compact-card {
+    width: 25vw !important;
+    height: 200px;
+  }
+}
+
+.cta-section {
+  margin-bottom: var(--size-l);
+}
+
+.main.deck-2 .logo {
+  margin-bottom: 7rem;
+}
+
+.content {
+  margin-bottom: 10vh;
+}
+
+.cta-workshops {
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  background-color: teal;
+}
+
+/* Extra large (desktop) */
+@media only screen and (max-width: 1200px) {
+}
+
+/* Large (large laptop) */
+@media only screen and (max-width: 992px) {
+}
+
+/* Medium (small laptop) */
+@media only screen and (max-width: 768px) {
+  ph-testimonial-image-circle,
+  .quote-component-container {
+    width: 75% !important;
+    max-width: 100vw;
+  }
+}
+
+/* Extra small (mobile) */
+@media only screen and (max-width: 552px) {
+  ph-testimonial-image-circle,
+  .quote-component-container {
+    width: 90% !important;
+    max-width: 100wv;
+  }
+  .teaser {
+    flex-direction: column;
+    align-items: center;
+
+    ph-compact-card {
+      width: 100% !important;
+    }
+  }
+}

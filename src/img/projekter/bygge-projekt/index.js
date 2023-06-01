@@ -8,7 +8,9 @@ import IMG_7 from './w2-1.webp';
 import IMG_8 from './w2-3.webp';
 import IMG_9 from './w2-4.webp';
 import IMG_10 from './d-teater-m-scene.webp';
+import IMG_11 from './w2-2.jpg';
+import BANNER from './w1-banner.webp';
 
 export {
-    IMG_1, IMG_2, IMG_3, IMG_4, IMG_5, IMG_6, IMG_7, IMG_8, IMG_9, IMG_10
+    IMG_1, IMG_2, IMG_3, IMG_4, IMG_5, IMG_6, IMG_7, IMG_8, IMG_9, IMG_10, IMG_11, BANNER
 }

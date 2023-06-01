@@ -10,14 +10,14 @@
 
 :root {
   font-size: 62.5%;
-  --body-background-color: var(--color-primary-1);
+  --body-background-color: black; //var(--color-primary-0);
 
-  --page-background-color: var(--color-primary-5);
+  --page-background-color: var(--color-primary-0);
   --page-fontsize-small: 1.2rem;
 
   --general-font-face: var(--font-montserrat-regular);
   --general-font-size: 1.5rem;
-  --general-font-color: #eee;
+  --general-font-color: #ece6dd;
 
   --background-dark: ##eee;
   --menu-background-color: #121f12;
@@ -53,16 +53,18 @@
   --size-m: 2rem;
   --size-l: 4rem;
   --size-xl: 6rem;
+  --size-xxl: 10rem;
 
   //*************************************************
   // COLOR:SCHEME
   //*************************************************
 
-  --color-primary-0: #2c5586; // Main Primary color */
+  //--color-primary-0: #2c5586; // Main Primary color */
+  --color-primary-0: rgb(39, 57, 61); // Main Primary color */
   --color-primary-1: #737a84;
   --color-primary-2: #556c89;
   --color-primary-3: #0a3f7e;
-  --color-primary-4: #033775;
+  --color-primary-4: rgb(3, 54, 117);
   --color-primary-5: #203e59;
   --color-primary-6: #b0c8fa;
 
@@ -84,7 +86,7 @@
 
 body {
   background-color: var(--body-background-color);
-  padding: 7rem 5vw 2rem 5vw;
+  padding: 0 10vw;
   color: var(--general-font-color);
   font-family: var(--general-font-face);
   font-size: var(--general-font-size);
@@ -99,11 +101,12 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color: var(--page-background-color);
-  padding: 0rem;
+  padding: 5vw 0;
+  width: 100%;
 }
 
 h1 {
-  font-family: var(--font-sigmarone-regular);
+  font-family: var(--font-lifesavers-regular);
   font-size: calc(3vw + 2rem);
   color: var(--color-secondary-1-1);
 }
@@ -132,6 +135,12 @@ quote {
   display: block;
   margin: var(--size-m);
   font-style: italic;
+}
+.divider {
+  width: 100%;
+  height: 3px;
+  margin: 2rem 0;
+  background-color: var(--color-secondary-2-0);
 }
 
 /* Extra large (desktop) */
