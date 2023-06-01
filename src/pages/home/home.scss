@@ -34,7 +34,7 @@ body {
 }
 
 .main {
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 2rem;
 }
 
@@ -42,13 +42,13 @@ body {
 .deck-3,
 .deck-4,
 .deck-5 {
-  min-height: 50vh;
+  // min-height: 50vh;
   //height: 50vh !important   ;
 }
 
 .logo {
   width: 25rem;
-  margin-bottom: var(--size-m);
+  margin: 3rem auto 7rem auto;
 }
 
 .quote-component-container {
@@ -78,14 +78,17 @@ body {
   }
 }
 
+.teaser-text {
+  margin: var(--size-m) auto;
+}
+
 .teasers {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   ph-compact-card {
-    width: 25vw !important;
-    height: 200px;
+    width: 24vw;
   }
 }
 
@@ -101,7 +104,8 @@ body {
   margin-bottom: 10vh;
 }
 
-.cta-workshops {
+.cta-workshops,
+.cta-inmeld-form {
   width: 200px;
   height: 60px;
   border-radius: 10px;
@@ -109,12 +113,108 @@ body {
   background-color: teal;
 }
 
+// INDMELDELSE
+
+.form-wrapper {
+  position: relative;
+  z-index: 0;
+  max-width: 50%;
+  min-width: 300px;
+  padding: 50px 30px 50px 30px;
+  margin: 50px auto;
+  background-color: #3d595f;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1;
+  }
+}
+
+.form-wrapper::after {
+  display: inline;
+  white-space: pre-wrap;
+  content: "SADLY... \A Formularen virker ikke endnu. \A Skriv i stedet kontakt info til info@maanemandens-penge.dk";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  font-size: 3rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.form-group {
+  position: relative;
+
+  & + .form-group {
+    margin-top: 30px;
+  }
+}
+
+.form-label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: var(--general-font-color);
+  background-color: transparent;
+  z-index: 10;
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+}
+form {
+  text-align: center;
+}
+
+.focused .form-label {
+  transform: translateY(-125%);
+  font-size: 0.75em;
+}
+
+.form-input {
+  position: relative;
+  padding: 12px 0px 5px 0;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 1px 0 0 #e5e5e5;
+  transition: box-shadow 150ms ease-out;
+  background-color: #3d595f;
+  &:focus {
+    box-shadow: 0 2px 0 0 blue;
+  }
+}
+
+.form-input.filled {
+  box-shadow: 0 2px 0 0 lightgreen;
+}
+
+// .cta-inmeld-form {
+//   width: 200px;
+//   height: 60px;
+//   border-radius: 10px;
+//   text-transform: uppercase;
+//   background-color: teal;
+//   margin-bottom: var(--size-l);
+// }
+
 /* Extra large (desktop) */
 @media only screen and (max-width: 1200px) {
 }
 
 /* Large (large laptop) */
 @media only screen and (max-width: 992px) {
+  .teasers ph-compact-card {
+    width: 30vw;
+  }
 }
 
 /* Medium (small laptop) */
@@ -133,12 +233,19 @@ body {
     width: 90% !important;
     max-width: 100wv;
   }
-  .teaser {
+  .content {
+    margin-bottom: var(--size-l);
+  }
+  .teasers {
     flex-direction: column;
     align-items: center;
 
     ph-compact-card {
       width: 100% !important;
+      margin: 2rem auto;
     }
+  }
+  .form-wrapper::after {
+    font-size: 2rem;
   }
 }

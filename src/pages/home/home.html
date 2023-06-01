@@ -7,6 +7,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <!--SECTION 1-->
     <div class="parallax-1"></div>
     <div class="main">
       <img class="logo" />
@@ -29,6 +30,8 @@
         </ph-testimonial-image-circle>
       </div>
     </div>
+
+    <!--SECTION 2 - WORKSHOP-->
     <div class="parallax-2"></div>
     <div class="main deck-2">
       <img class="logo" />
@@ -61,59 +64,141 @@
           </ph-compact-card>
         </div>
       </div>
-      <button class="cta-workshops"">Tilmeld Workshop</button>
+      <button class="cta cta-workshops"">Tilmeld Workshop</button>
     </div>
 
+    <!--SECTION 3- FORESTILLINGER -->
     <div class="parallax-3"></div>
     <div class="main deck-3">
+      <img class="logo" />
       <h1>Forestillinger</h1>
       <div class="content">
         <div class="teaser-text">
           Månemandens Penge opfører naturligvis også rigtige dukketeater forestillinger. Pt. har vi Skatteøen af Robert Louis Stevenson, Egen fortolkning af Sharlings "Nøddebo Præstegård" og den fantastiske Alexandre Dúmas´ De tre Musketerer på bedding. Vi spiller til kulturelle arrangementer, dukketeater relaterede festivals og private fester
         </div>
         <div class="teasers">
-          <img id="forestillinger-teaser-1" />
-          <img id="forestillinger-teaser-2" />
-          <img id="forestillinger-teaser-3" />
+          <ph-compact-card id="f1">
+            <span slot="compact-card-title">Skatteøen</span>
+            <span slot="compact-card-text">
+              Ohoy skipper... Skal du med på skattejagt ?
+            </span>
+          </ph-compact-card>
+          <ph-compact-card id="f2">
+            <span slot="compact-card-title">De tre Musketerer</span>
+            <span slot="compact-card-text">
+              Én for alle... og alle for én. Smæk for skillingen.
+            </span>
+          </ph-compact-card>
+          <ph-compact-card id="f3">
+            <span slot="compact-card-title">Nøddebo Præstegård</span>
+            <span slot="compact-card-text">
+              Sukkergodter, jul, jul, jul...
+            </span>
+          </ph-compact-card>
         </div>
       </div>
+      <button class="cta cta-workshops"">Se Kalender</button>
     </div>
+
+    <!-- SECTION 4 - SHOP-->
     <div class="parallax-4"></div>
     <div class="main deck-4">
-      <h1>Shop</h1>
+      <img class="logo" />
+      <h1>Shop´en</h1>
       <div class="content">
         <div class="teaser-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum molestiae
-          quidem, soluta labore amet architecto, dolor laborum voluptatibus
-          aspernatur maxime fugiat itaque, odio obcaecati! Eveniet velit est
-          vero tenetur delectus reprehenderit deleniti quisquam nostrum
-          praesentium ipsum? Ea, eveniet odit ex nisi aut, non perspiciatis
-          dolorem simi
+          For at gøre det lettere for dig at komme i gang, har Månemandens Penge altid et lille lager af materialer, ark og anvisninger  til salg. Vi har endnu ikke en "rigtig" webshop, men du kan bestille via e-mail. Klik ind på shoppen og lad dig inspirere.
+        </div>
+        <div class="teaser-text">
+          Alt overskud går direkte til foreningens formål...  mere dukketeater til danskernes hjerter :-)  
         </div>
         <div class="teasers">
-          <img id="shop-teaser-1" />
-          <img id="shop-teaser-2" />
-          <img id="shop-teaser-3" />
+          <ph-compact-card id="s1">
+            <span slot="compact-card-title">Teatre</span>
+            <span slot="compact-card-text">
+              Smukke proscenier, draperier, fortæpper og alt du skal bruge til at bygge dit første D-Teater.
+            </span>
+          </ph-compact-card>
+          <ph-compact-card id="s2">
+            <span slot="compact-card-title">Figur-ark</span>
+            <span slot="compact-card-text">
+              De sjoveste og mest fantasifulde teater figurer til din forestilling. 
+            </span>
+          </ph-compact-card>
+          <ph-compact-card id="s3">
+            <span slot="compact-card-title">Opmærksomme børn</span>
+            <span slot="compact-card-text">
+              Et lille øjeblik fra fantasiens verden
+            </span>
+          </ph-compact-card>
         </div>
       </div>
+      <button class="cta cta-workshops"">Gå til Shop</button>
+      </div>
     </div>
+
+    <!--SECTION 5-->
     <div class="parallax-5"></div>
     <div class="main deck-5">
+      <img class="logo" />
       <h1>Meld dig ind</h1>
       <div class="content">
         <div class="teaser-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum molestiae
-          quidem, soluta labore amet architecto, dolor laborum voluptatibus
-          aspernatur maxime fugiat itaque, odio obcaecati! Eveniet velit est
-          vero tenetur delectus reprehenderit deleniti quisquam nostrum
-          praesentium ipsum? Ea, eveniet odit ex nisi aut, non perspiciatis
-          dolorem simi
+          Har du lyst til at deltage i afviklingen af workshops, forestillinger og udstillinger er er foreningen Månemandens Penge lige noget for dig. Du kan også vælge at være passivt støttemedlem, og modtage nyhedsbrev og invitationer  til særlige events i foreningen.
         </div>
-        <div class="teasers">
-          <img id="meld-dig-ind-teaser-1" />
-          <img id="meld-dig-ind-teaser-2" />
-          <img id="meld-dig-ind-teaser-3" />
+
+        <div class="teaser-text">
+          Uanset hvorfor er du velkommen. Du kan udfylde formularen herunder, så vender vi tilbage til dig snarest.
         </div>
+        <div class="form-wrapper">
+          <form action="" class="form">
+            <div class="form-group">
+              <label class="form-label" for="name">Navn</label>
+              <input id="name" class="form-input" type="text" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="address">Adresse</label>
+              <input id="address" class="form-input" type="text" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="zip-and-city">Postnummer/by</label>
+              <input id="zip-and-city" class="form-input" type="text" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">E-mail</label>
+              <input id="email" class="form-input" type="text" />
+            </div>
+            <div class="form-group">
+            <button class="cta cta-inmeld-form">Send</button>
+            </div>
+            </form>
+        </div>
+        <div class="teaser-text">
+          Du kan læse mere  om foreningens arbejde her: <a href="./om-foreningen.html">Om Foreningen</a>  
+        </div>
+      </div>
+       
+       
+          <!-- <div class="teasers">
+          <ph-compact-card id="ws1">
+            <span slot="compact-card-title">Resultatet</span>
+            <span slot="compact-card-text">
+              Teatrene før den sidste montering af drapperier og tæppe
+            </span>
+          </ph-compact-card>
+          <ph-compact-card id="ws2">
+            <span slot="compact-card-title">Prosceniet</span>
+            <span slot="compact-card-text">
+              Der arbejdes og diskuteres om montering af proscenium.
+            </span>
+          </ph-compact-card>
+          <ph-compact-card id="ws3">
+            <span slot="compact-card-title">Opmærksomme børn</span>
+            <span slot="compact-card-text">
+              Et lille øjeblik fra fantasiens verden
+            </span>
+          </ph-compact-card>
+        </div> -->
       </div>
     </div>
   </body>

@@ -7,6 +7,7 @@ import './../../web-components/compact-card.component.js';
 import * as IMAGES from './../../img/home/';
 import * as WORKSHOP_IMAGES from './../../img/projekter/bygge-projekt'
 import * as FORESTILLINGER_IMAGES from './../../img/forestillinger'
+import * as SHOP_IMAGES from './../../img/shop/';
 import * as OM_OS_IMAGES from './../../img/foreningen/';
 console.log('home loaded');
 
@@ -39,18 +40,75 @@ window.addEventListener('DOMContentLoaded', () => {
         mouseOverEffect: 'grayscale',
     }
 
+    // SECTION  2 - WORKSHOP
+
     const compactCard1 = document.querySelector('ph-compact-card#ws1');
     compactCard1.config = {
-        backgroundImage: WORKSHOP_IMAGES.IMG_4,
+        backgroundImageUrl: WORKSHOP_IMAGES.IMG_4,
     }
     const compactCard2 = document.querySelector('ph-compact-card#ws2');
     compactCard2.config = {
-        backgroundImage: WORKSHOP_IMAGES.IMG_9,
+        backgroundImageUrl: WORKSHOP_IMAGES.IMG_9,
     }
     const compactCard3 = document.querySelector('ph-compact-card#ws3');
     compactCard3.config = {
-        backgroundImage: WORKSHOP_IMAGES.IMG_11,
+        backgroundImageUrl: WORKSHOP_IMAGES.IMG_11,
     }
+
+    // SECTION  3 - FORESTILLINGER
+
+    const compactCardForestillinger1 = document.querySelector('ph-compact-card#f1');
+    compactCardForestillinger1.config = {
+        backgroundImageUrl: FORESTILLINGER_IMAGES.BLOKHUS,
+    }
+    const compactCardForestillinger2 = document.querySelector('ph-compact-card#f2');
+    compactCardForestillinger2.config = {
+        backgroundImageUrl: FORESTILLINGER_IMAGES.DE_TRE_MUSKETERER,
+    }
+    const compactCardForestillinger3 = document.querySelector('ph-compact-card#f3');
+    compactCardForestillinger3.config = {
+        backgroundImageUrl: FORESTILLINGER_IMAGES.KLOKKETAARN,
+    }
+
+    // SECTION  4 - SHOP
+
+    const compactCardShop1 = document.querySelector('ph-compact-card#s1');
+    compactCardShop1.config = {
+        backgroundImageUrl: SHOP_IMAGES.PROSCENIUM_M_LOGGIA,
+    }
+    const compactCardShop2 = document.querySelector('ph-compact-card#s2');
+    compactCardShop2.config = {
+        backgroundImageUrl: SHOP_IMAGES.FIGURER_1,
+    }
+    const compactCardShop3 = document.querySelector('ph-compact-card#s3');
+    compactCardShop3.config = {
+        backgroundImageUrl: SHOP_IMAGES.ARK_01_02,
+    }
+
+    // FORM EKSPERIMENTER
+
+    // Focus event handler
+    document.querySelectorAll('input').forEach(function (input) {
+        input.addEventListener('focus', function () {
+            this.parentNode.classList.add('focused');
+        });
+    });
+
+    // Blur event handler
+    document.querySelectorAll('input').forEach(function (input) {
+        input.addEventListener('blur', function () {
+            var inputValue = this.value;
+            if (inputValue === "") {
+                this.classList.remove('filled');
+                this.parentNode.classList.remove('focused');
+            } else {
+                this.classList.add('filled');
+            }
+        });
+    });
+
+
+
 
     // CTAs
     document.querySelector('.cta-workshops').addEventListener('click', () => {
