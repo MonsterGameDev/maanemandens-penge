@@ -1,4 +1,9 @@
-import * as BURGER_MENU from './burger-menu.svg';
+/*
+config = {
+	burgerIconUrl: string
+}
+*/
+
 
 const menu = document.createElement('template');
 menu.innerHTML = `
@@ -92,6 +97,33 @@ menu.innerHTML = `
 			* {
 				box-sizing: border-box;
 			}
+			.moon-icon {
+				padding: 1rem;
+				position: fixed;
+				top:0;
+				right: 0;
+				width: 70px;
+				height: 70px;
+				z-index: 101;
+				
+				transition: all .5s .2s ease-out;
+				transform: translateY(10px) rotateZ(-360deg);
+				opacity: 0;
+			}
+
+			.moon-icon-show {
+				transform: translateY(0) rotateZ(0);
+				opacity: 1;
+			}
+
+			.show-menu {
+				transform: scale(50);
+			}
+
+			.no-scroll {
+				overflow: hidden;
+			}
+
 			nav {
 				width: 100%;
 				height: 100vh;
@@ -145,6 +177,7 @@ menu.innerHTML = `
 		fill="#000000"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M222.927 580.115l301.354 328.512c24.354 28.708 20.825 71.724-7.883 96.078s-71.724 20.825-96.078-7.883L19.576 559.963a67.846 67.846 0 01-13.784-20.022 68.03 68.03 0 01-5.977-29.488l.001-.063a68.343 68.343 0 017.265-29.134 68.28 68.28 0 011.384-2.6 67.59 67.59 0 0110.102-13.687L429.966 21.113c25.592-27.611 68.721-29.247 96.331-3.656s29.247 68.721 3.656 96.331L224.088 443.784h730.46c37.647 0 68.166 30.519 68.166 68.166s-30.519 68.166-68.166 68.166H222.927z"/></svg>
 	</div>
 	<div class="burger-button"></div>
+	<img class="moon-icon moon-icon-show">
 	<nav>
 		<a href="./om-foreningen.html">Om foreningen</a>
 		<a href="./artikler.html">Artikler</a>
@@ -152,11 +185,15 @@ menu.innerHTML = `
 		<a href="./forestillinger.html">Forestillinger</a>
 		<a href="./shop.html">Shop</a>
 	</nav>`
-
-
-
-
 class Menu extends HTMLElement {
+	set config(val = {}) {
+		this._config = val;
+		this.render();
+	}
+
+	get config() {
+		return this._config;
+	}
 
 	constructor() {
 		super();
@@ -166,6 +203,37 @@ class Menu extends HTMLElement {
 
 		this.menuOpen = false;
 		this.navMenu;
+	}
+
+
+	render() {
+		const body = document.querySelector('body');
+
+
+		const moonIcon = this.shadowRoot.querySelector('.moon-icon');
+		console.log(moonIcon);
+		moonIcon.src = this._config.burgerIconUrl
+
+		moonIcon.addEventListener('click', () => {
+			console.log('clicked');
+			//body.classList.add('no-scroll');
+			body.style.overflow = 'hidden';
+			moonIcon.classList.add('show-menu');
+		});
+
+		let isScrolling = false
+
+		window.addEventListener('scroll', (e) => {
+			window.clearTimeout(isScrolling);
+			moonIcon.classList.remove('moon-icon-show');
+
+			isScrolling = setTimeout(() => {
+				console.log('scrolling has stopped');
+				moonIcon.classList.add('moon-icon-show');
+			}, 100);
+
+
+		})
 	}
 
 	connectedCallback() {
@@ -184,11 +252,12 @@ class Menu extends HTMLElement {
 		<path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"  class="svg-stroke-color"/>
 		</svg>
 		`
-		this.shadowRoot.querySelector('.burger-button').innerHTML = burgerMenuSVG;
+		//	this.shadowRoot.querySelector('.burger-button').innerHTML = burgerMenuSVG;
+
+
 	}
 
 	loadCloseMenuIcon() {
-		console.log('closing');
 		const burgerCrossSVG = `
 		<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z" fill="#000000"  class="svg-stroke-color"/></svg>

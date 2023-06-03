@@ -4,14 +4,21 @@ import './../../web-components/quote.component.js';
 import './../../web-components/testimonial-image-circle.js';
 import './../../web-components/round-photo-button.js';
 import './../../web-components/compact-card.component.js';
+import './../../web-components/moon-menu-component/moon-menu.component.js';
 import * as IMAGES from './../../img/home/';
 import * as WORKSHOP_IMAGES from './../../img/projekter/bygge-projekt'
 import * as FORESTILLINGER_IMAGES from './../../img/forestillinger'
 import * as SHOP_IMAGES from './../../img/shop/';
 import * as OM_OS_IMAGES from './../../img/foreningen/';
-console.log('home loaded');
+import * as GENERAL_IMAGES from './../../img/general/'
+
 
 window.addEventListener('DOMContentLoaded', () => {
+    const menu = document.querySelector('ph-moon-menu');
+    menu.config = {
+        burgerIconUrl: GENERAL_IMAGES.MOON,
+    }
+
     //document.getElementById('main-image').src = IMAGES.MP_TEATER;
     const mainBG = document.querySelector('.parallax-1');
     mainBG.style.backgroundImage = ` url(${IMAGES.VOVVOV})`;
