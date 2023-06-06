@@ -11,6 +11,41 @@ body {
   align-items: center;
 }
 
+.parallax-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  .welcome-overlay {
+    position: fixed;
+    z-index: 100;
+    width: 80%;
+    height: 25rem;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: scale(0);
+
+    display: flex;
+    justify-content: center;
+
+    .text-1 {
+      font-family: var(--general-font-face);
+      text-transform: uppercase;
+      font-style: italic;
+      font-size: 7rem;
+      font-weight: 900;
+
+      margin-top: 2rem;
+    }
+  }
+
+  .welcome-overlay-show {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .parallax-1,
 .parallax-2,
 .parallax-3,
@@ -36,14 +71,6 @@ body {
 .main {
   min-height: 100vh;
   padding: 0 2rem;
-}
-
-.deck-2,
-.deck-3,
-.deck-4,
-.deck-5 {
-  // min-height: 50vh;
-  //height: 50vh !important   ;
 }
 
 .logo {
@@ -197,15 +224,6 @@ form {
   box-shadow: 0 2px 0 0 lightgreen;
 }
 
-// .cta-inmeld-form {
-//   width: 200px;
-//   height: 60px;
-//   border-radius: 10px;
-//   text-transform: uppercase;
-//   background-color: teal;
-//   margin-bottom: var(--size-l);
-// }
-
 /* Extra large (desktop) */
 @media only screen and (max-width: 1200px) {
 }
@@ -223,6 +241,9 @@ form {
   .quote-component-container {
     width: 75% !important;
     max-width: 100vw;
+  }
+  .parallax-2 {
+    background-position-x: right !important;
   }
 }
 
@@ -247,5 +268,16 @@ form {
   }
   .form-wrapper::after {
     font-size: 2rem;
+  }
+  .parallax-2 {
+    // centrerer pigen th
+    background-position-x: 94% !important;
+  }
+  .parallax-4 {
+    // centrerer zeo
+    background-position-x: 85% !important;
+  }
+  .cta {
+    margin-bottom: 6rem;
   }
 }

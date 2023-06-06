@@ -1,8 +1,9 @@
 /*
 
 */
-import MOON from './moon.svg';
+import MOON from './moon-gpt.svg';
 import CLOSE from './burger-menu-close.svg';
+//import BURGER from './burger-menu.svg';
 
 const menu = document.createElement('template');
 menu.innerHTML = `
@@ -23,7 +24,6 @@ menu.innerHTML = `
         margin: 1rem;
         margin-right: calc(1rem + 10vw);
 
-        /*box-shadow: var(--box-shadow-1);*/
         -webkit-filter: drop-shadow(5px 5px 5px #222);
         filter: drop-shadow(5px 5px 5px #222);
 
@@ -38,6 +38,26 @@ menu.innerHTML = `
     .show-menu  {
         transform: scale(30);
     }
+    /*
+    .burger-menu-icon {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 103;
+
+        width: 50px;
+        height: 50px;
+        margin: 1.5rem;
+        margin-right: calc(1.5rem + 10vw);
+        : opacity  .4s .4s ease-out;
+        opacity: 0;
+
+        pointer-events: none;
+    }
+    .burger-menu-icon-show {
+        opacity: 1;
+    }
+    */
     .close {
         position: fixed;
         top: 0;
@@ -105,15 +125,13 @@ menu.innerHTML = `
         color: var(--general-font-color);
         letter-spacing: 10px;
 
-        transition: all .8s .8s ease-out;
+        transition: transform .8s .8s ease-out;
         transform: rotateX(90deg);
         transform-origin:  center bottom
         
     }
     a:hover {
-        transition: all .2s .2s ease-out;
-        color:#e220e0;
-        transform: scale(1.2);
+        color:#ff5722;
     }
 
     .items-shown {
@@ -121,6 +139,10 @@ menu.innerHTML = `
         pointer-events: all;
         transform: rotateX(0);
     }
+
+
+
+
 
     /*
         MEDIAQUERYS
@@ -157,6 +179,7 @@ menu.innerHTML = `
 
     </style>
     <img class="moon-icon moon-icon-show">
+   <!-- <img class="burger-menu-icon burger-menu-icon-show"> -->
     <img class="close">
     <div class="overlay">
         <nav class="menu-list">
@@ -197,6 +220,9 @@ class MoonMenu extends HTMLElement {
         const moonImage = this.shadowRoot.querySelector('.moon-icon');
         moonImage.src = MOON;
 
+        // const burgerIcon = this.shadowRoot.querySelector('.burger-menu-icon');
+        // burgerIcon.src = BURGER;
+
         const closeButton = this.shadowRoot.querySelector('.close');
         closeButton.src = CLOSE;
 
@@ -209,9 +235,11 @@ class MoonMenu extends HTMLElement {
         window.addEventListener('scroll', () => {
             window.clearTimeout(isScrolling);
             moonImage.classList.remove('moon-icon-show');
+            //burgerIcon.classList.remove('burger-menu-icon-show');
 
             isScrolling = setTimeout(() => {
                 console.log('scrolling has stopped');
+                //  burgerIcon.classList.add('burger-menu-icon-show');
                 moonImage.classList.add('moon-icon-show');
             }, 100);
 
@@ -219,10 +247,15 @@ class MoonMenu extends HTMLElement {
 
         // Open  Menu
         moonImage.addEventListener('click', () => {
+            // prevent scrolling
             body.style.overflow = 'hidden';
+
             moonImage.classList.add('show-menu');
+            // burgerIcon.classList.remove('burger-menu-icon-show');
             closeButton.classList.add('close-show');
             overlay.classList.add('overlay-show');
+
+
             links.forEach(link => link.classList.add('items-shown'));
 
 
@@ -233,6 +266,7 @@ class MoonMenu extends HTMLElement {
             body.style.overflow = 'unset';
             moonImage.classList.remove('show-menu');
 
+            // burgerIcon.classList.add('burger-menu-icon-show');
 
             closeButton.classList.remove('close-show');
             overlay.classList.remove('overlay-show');

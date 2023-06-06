@@ -1,4 +1,4 @@
-import './web-components/menu-component/menu.component.js';
+import './web-components/moon-menu-component/moon-menu.component';
 
 
 

@@ -14,28 +14,49 @@ import * as GENERAL_IMAGES from './../../img/general/'
 
 
 window.addEventListener('DOMContentLoaded', () => {
+
+    // MOON MENU
     const menu = document.querySelector('ph-moon-menu');
     menu.config = {
         burgerIconUrl: GENERAL_IMAGES.MOON,
     }
 
-    //document.getElementById('main-image').src = IMAGES.MP_TEATER;
+
+
+
+    // PARALLAXED IMAGES
     const mainBG = document.querySelector('.parallax-1');
     mainBG.style.backgroundImage = ` url(${IMAGES.VOVVOV})`;
 
+    setTimeout(() => {
+        // https://stackoverflow.com/questions/64386608/element-with-opacity-0-in-css-is-not-initially-zero-on-page-load
+        document.querySelector('.welcome-overlay').style.transition = 'all 1s 1s ease-out';
+        document.querySelector('.welcome-overlay').classList.add('welcome-overlay-show');
+    }, 300);
+
+
+    // setTimeout(() => {
+    //     window.scrollTo({
+    //         top: window.innerHeight,
+    //         left: 0,
+    //         behavior: "smooth",
+    //     })
+    // }, 3000);
+
     const parallax2 = document.querySelector('.parallax-2');
-    parallax2.style.backgroundImage = `url(${WORKSHOP_IMAGES.BANNER})`
+    parallax2.style.backgroundImage = `url(${WORKSHOP_IMAGES.IMG_12})`
 
     const parallax3 = document.querySelector('.parallax-3');
     parallax3.style.backgroundImage = `url(${FORESTILLINGER_IMAGES.DAEKKET})`;
 
     const parallax4 = document.querySelector('.parallax-4');
-    parallax4.style.backgroundImage = `url(${IMAGES.BG_PIC1})`;
+    parallax4.style.backgroundImage = `url(${IMAGES.KIDS})`;
 
     const parallax5 = document.querySelector('.parallax-5');
     parallax5.style.backgroundImage = `url(${IMAGES.MP_TEATER})`;
 
 
+    // FIRST DECK
     const logo = document.querySelectorAll('.logo');
     logo.forEach(l =>
         l.src = IMAGES.LOGO
@@ -127,5 +148,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function tilmeldWorkshop() {
     console.log('Tilmeld Workshop Clicked')
+}
+
+function animate() {
+    const welcomeOverlay = document.querySelector('.welcome-overlay');
+    welcomeOverlay.classList.add('welcome-overlay-show');
 }
 
