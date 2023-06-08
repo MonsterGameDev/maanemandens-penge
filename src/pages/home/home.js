@@ -5,6 +5,7 @@ import './../../web-components/testimonial-image-circle.js';
 import './../../web-components/round-photo-button.js';
 import './../../web-components/compact-card.component.js';
 import './../../web-components/moon-menu-component/moon-menu.component.js';
+import '../../web-components/morfars-ur/morfars-ur.js';
 import * as IMAGES from './../../img/home/';
 import * as WORKSHOP_IMAGES from './../../img/projekter/bygge-projekt'
 import * as FORESTILLINGER_IMAGES from './../../img/forestillinger'
@@ -26,22 +27,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // PARALLAXED IMAGES
     const mainBG = document.querySelector('.parallax-1');
-    mainBG.style.backgroundImage = ` url(${IMAGES.VOVVOV})`;
+    // mainBG.style.backgroundImage = ` url(${IMAGES.VOVVOV})`;
 
-    setTimeout(() => {
-        // https://stackoverflow.com/questions/64386608/element-with-opacity-0-in-css-is-not-initially-zero-on-page-load
-        document.querySelector('.welcome-overlay').style.transition = 'all 1s 1s ease-out';
-        document.querySelector('.welcome-overlay').classList.add('welcome-overlay-show');
-    }, 300);
-
+    const phMorfarsUrParallax = document.querySelector('ph-morfars-ur-parallax')
+    mainBG.addEventListener('scroll', () => {
+        phMorfarsUrParallax.setAttribute('scroll-top', mainBG.scrollTop)
+    });
 
     // setTimeout(() => {
-    //     window.scrollTo({
-    //         top: window.innerHeight,
-    //         left: 0,
-    //         behavior: "smooth",
-    //     })
-    // }, 3000);
+    //     // https://stackoverflow.com/questions/64386608/element-with-opacity-0-in-css-is-not-initially-zero-on-page-load
+    //     document.querySelector('.welcome-overlay').style.transition = 'all 1s 1s ease-out';
+    //     document.querySelector('.welcome-overlay').classList.add('welcome-overlay-show');
+    // }, 300);
+
 
     const parallax2 = document.querySelector('.parallax-2');
     parallax2.style.backgroundImage = `url(${WORKSHOP_IMAGES.IMG_12})`
@@ -99,7 +97,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // SECTION  4 - SHOP
-
     const compactCardShop1 = document.querySelector('ph-compact-card#s1');
     compactCardShop1.config = {
         backgroundImageUrl: SHOP_IMAGES.PROSCENIUM_M_LOGGIA,
@@ -113,7 +110,6 @@ window.addEventListener('DOMContentLoaded', () => {
         backgroundImageUrl: SHOP_IMAGES.ARK_01_02,
     }
 
-    // FORM EKSPERIMENTER
 
     // Focus event handler
     document.querySelectorAll('input').forEach(function (input) {
