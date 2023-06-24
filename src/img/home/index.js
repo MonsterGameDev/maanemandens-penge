@@ -9,6 +9,9 @@ import TALENDE_KOMMODE from './Ark 33.jpg'
 import FIGURER from './Figurark1.jpg'
 import GL_GADE from './ark1.jpg'
 import KIDS from './img2-z-og-k.webp'
+import SUFFIT_LOW from './suffit-500.png';
+import SUFFIT_HIGH from './suffit-720.png';
+import DRAPPERI from './drapperi.png';
 
 export {
     MP_TEATER,
@@ -21,5 +24,8 @@ export {
     TALENDE_KOMMODE,
     VOVVOV,
     KIDS,
-    LOGO_ONLY
+    LOGO_ONLY,
+    SUFFIT_LOW,
+    SUFFIT_HIGH,
+    DRAPPERI
 };
