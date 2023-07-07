@@ -1,3 +1,59 @@
+//ROBOTO
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/roboto/Roboto-Italic.ttf") format("truetype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/roboto/Roboto-bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/roboto/Roboto-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/roboto/Roboto-Black.ttf") format("truetype");
+  font-weight: bolder;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/roboto/Roboto-BlackItalic.ttf") format("truetype");
+  font-weight: bolder;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: lighter;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/roboto/Roboto-LightItalic.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: italic;
+}
+
+// PHOSPHATE
+@font-face {
+  font-family: "Phosphate";
+  src: url("/src/fonts/Phosphate/PhosphateInline/PhosphateInline.ttf")
+    format("truetype");
+}
+// Rockwen
+@font-face {
+  font-family: "Rockwen";
+  src: url("/src/fonts/rockwen.ttf") format("truetype");
+}
+
 // MONTSERRAT
 @font-face {
   font-family: "Montserrat-Regular";
