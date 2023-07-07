@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1031px" height="682px" viewBox="0 0 1031 682" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path</title>
+    <defs>
+        <path d="M249.991221,206.741046 C254.290112,-68.2917628 595.481373,13.3674599 612.179959,118.127621 C701.350956,66.7583773 790.650734,96.8961452 829.021189,206.741046 C1016.68068,150.25584 1046.10515,464.231902 829.021189,420.048138 C799.146369,597.088643 639.1576,553.626563 601.608529,502.358648 C554.263689,540.801815 518.068459,526.771088 485.016503,519.798435 C355.831878,694.971992 178.886153,545.26583 181.907458,457.113113 C-35.779044,423.798429 36.3343414,113.959383 249.991221,206.741046 Z" id="path-1"></path>
+        <filter x="-9.7%" y="-10.3%" width="119.3%" height="131.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="10" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="30" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.217274913 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="white" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Path">
+            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

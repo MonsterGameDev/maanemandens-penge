@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="707px" height="208px" viewBox="0 0 707 208" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path 3</title>
+    <defs>
+        <path d="M121.87677,381 C249.540842,380.427039 490.425508,381.196886 564.850683,380.126179 C627.241626,363.944675 613.64195,265.026571 561.727051,265.228735 C569.390125,177.38212 532.97725,153.379708 458.178863,142.619449 C488.07836,-19.2474078 271.895162,-46.0438332 231.3698,76.1560958 C184.079518,41.3426437 102.528835,56.6754287 101.321879,142.619449 C-49.5004511,197.926857 -23.0402807,362.994873 121.87677,381 Z" id="path-1"></path>
+        <filter x="-14.8%" y="-15.7%" width="129.7%" height="147.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="10" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="30" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.217274913 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy-12" transform="translate(-10.000000, -2313.000000)">
+            <g id="Group-8" transform="translate(60.000000, 2120.000000)">
+                <g id="Path-3" transform="translate(0.000000, 213.000000)">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

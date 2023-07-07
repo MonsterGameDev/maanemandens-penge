@@ -12,6 +12,9 @@ import KIDS from './img2-z-og-k.webp'
 import SUFFIT_LOW from './suffit-500.png';
 import SUFFIT_HIGH from './suffit-720.png';
 import DRAPPERI from './drapperi.png';
+import YELLOW_LOGO from './logo.png';
+import FULLMOON from './Full_Moon.svg'
+import SCROLLHAND from './scroll-hand.png';
 
 export {
     MP_TEATER,
@@ -27,5 +30,8 @@ export {
     LOGO_ONLY,
     SUFFIT_LOW,
     SUFFIT_HIGH,
-    DRAPPERI
+    DRAPPERI,
+    YELLOW_LOGO,
+    FULLMOON,
+    SCROLLHAND,
 };
