@@ -1,7 +1,16 @@
+@import "./../../fonts/font";
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+.no-transition * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 
 html {
@@ -20,9 +29,43 @@ html {
   background: linear-gradient(to bottom, #0a0611 0%, #2c4595 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0A0611', endColorstr='#2C4595',GradientType=0 );
   background-attachment: fixed;
+
+  --cloud-text-heading: Phosphate;
+  --cloud-text-body: Roboto;
+  --cta-button-font: Rockwen;
 }
 
 body {
+  #full-moon {
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+
+    box-shadow: 0 0 50px gold, 0 0 150px gold;
+    border-radius: 50%;
+    &::before {
+      content: "HELLO";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: red;
+      width: 100px;
+      height: 100px;
+      z-index: 1000;
+      display: inline-block;
+    }
+  }
+
+  #scroll-hand {
+    z-index: 100;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    opacity: 1;
+
+    transition: opacity 1s 0.2s ease-out;
+  }
+
   .first-deck {
     position: relative;
     width: 100%;
@@ -41,6 +84,7 @@ body {
       background-position: top center;
       background-image: url("./../../img/home/suffit-500.png");
     }
+
     .left-curtain {
       z-index: 2;
       background-repeat: no-repeat;
@@ -49,6 +93,7 @@ body {
       background-size: contain;
       left: -2rem;
     }
+
     .right-curtain {
       z-index: 3;
       background-repeat: no-repeat;
@@ -59,6 +104,33 @@ body {
 
       transform: scaleX(-1);
     }
+
+    .logo-container {
+      z-index: 100;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 35%;
+
+      img {
+        width: 55%;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .punchline {
+        line-height: 3.5vw;
+        font-weight: 100;
+        width: 100%;
+        font-family: Phosphate;
+        text-transform: uppercase;
+        color: #fdcc00;
+        font-size: 3vw;
+      }
+    }
   }
 
   .second-deck {
@@ -68,10 +140,45 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .cloud-container {
+      position: absolute;
+      display: inline-block;
+
+      width: 80%;
+      aspect-ratio: 16/10;
+      
+      ph-image-clipped {
+        width: 85%;
+        height: fit-content;
+        margin-top: -10%;
+        position: absolute;
+        top: 20%;
+        left: 7%;
+        z-index: 10;
+      }
+
+      ph-text-cloud {
+        width: 63%;
+        height: fit-content;
+        position: absolute;
+        top: 43%;
+        left: 37.3%;
+        z-index: 11;
+      }
+    }
   }
 
-  ph-image-clipped {
-    width: 50%;
-    margin-top: -10%;
+  .third-deck {
+    height: 100vh;
+    background: green;
+  }
+
+  // animation classes
+  .hide {
+    opacity: 0 !important;
+  }
+  .show {
+    opacity: 1 !important;
   }
 }
