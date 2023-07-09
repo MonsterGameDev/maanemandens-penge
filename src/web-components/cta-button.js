@@ -16,7 +16,7 @@ ctaButtonTemplate.innerHTML = `
             background:#FDCC00;
             box-shadow: 0 1vw 1vw rgb(0 0 0 / 0.2);
             color:#0D101D;
-            font-size: 1.7vw;
+            font-size: 2.1vw;
             border-radius: 100px 100px;
             font-family: var(--cta-button-font);
             letter-spacing: .2vw;
