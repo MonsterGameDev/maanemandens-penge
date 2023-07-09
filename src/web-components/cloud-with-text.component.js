@@ -146,7 +146,7 @@ class TextCloud extends HTMLElement {
         .heading {
             font-size: 3vw;
             text-transform: uppercase;
-            margin-bottom: 1.3vw;
+            margin-bottom: 1.2vw;
             font-family: var(--cloud-text-heading);
             font-weight: 100;
         }
@@ -154,22 +154,68 @@ class TextCloud extends HTMLElement {
             width: 70%;
             margin-bottom: 1.5vw;
             text-align: center;
-            font-size: 1.6vw;
+            font-size: 1.3vw;
             font-weight:normal;
             font-family: var(--cloud-text-body);
         }
         .cta {}
+
+        /* CLOUD 1 */
+        .text-layer-cloud1 {
+            margin-top: -1vw;
+            margin-left: 1vw;
+           
+        }
+        .heading-cloud1 {
+            margin-bottom: 2.2vw;
+            margin-left: -3vw
+        }
+        .body-cloud1 {
+            margin-bottom: 2.2vw;
+            margin-left: 0vw;
+        }
+        /* CLOUD 2 */
+        .text-layer-cloud2 {
+            margin-top: 0vw;
+        }
+        .heading-cloud2 {
+            margin-bottom: 2.2vw;
+            margin-left: -3vw
+        }
+        .body-cloud2 {
+            margin-bottom: 2.2vw;
+            margin-left: -4vw;
+        }
+
+        /* CLOUD 3 */
+        .text-layer-cloud3 {
+            margin-top: 3vw;
+        }
+        .heading-cloud3 {
+            margin-bottom: 2.2vw;
+            margin-left: -12vw
+        }
+        .body-cloud3 {
+            margin-bottom: 2.2vw;
+            margin-left: -4vw;
+        }
 
         /* CLOUD 4 */
         .text-layer-cloud4 {
             margin-top: 5vw;
         }
         .heading-cloud4 {
-            margin-bottom: 3vw;
+            margin-bottom: 2.2vw;
+            margin-left: -3vw
         }
         .body-cloud4 {
-            margin-bottom: 4.2vw;
+            margin-bottom: 2.2vw;
+            margin-left: -4vw;
         }
+
+       
+
+
     </style>
     <div class="text-layer">
         <h2 class="heading"><slot name="heading"></slot></h2>
@@ -204,15 +250,24 @@ class TextCloud extends HTMLElement {
 
         switch (this._config.clipPath) {
             case 'cloud1':
+                this.shadowRoot.querySelector('.text-layer').classList.add('text-layer-cloud1');
+                this.shadowRoot.querySelector('.heading').classList.add('heading-cloud1');
+                this.shadowRoot.querySelector('.body').classList.add('body-cloud1');
                 break;
             case 'cloud2':
+                this.shadowRoot.querySelector('.text-layer').classList.add('text-layer-cloud2');
+                this.shadowRoot.querySelector('.heading').classList.add('heading-cloud2');
+                this.shadowRoot.querySelector('.body').classList.add('body-cloud2');
                 break;
             case 'cloud3':
+                this.shadowRoot.querySelector('.text-layer').classList.add('text-layer-cloud3');
+                this.shadowRoot.querySelector('.heading').classList.add('heading-cloud3');
+                this.shadowRoot.querySelector('.body').classList.add('body-cloud3');
                 break;
             case 'cloud4':
-                this.shadowRoot.querySelector('.text-layer').classList.add('text-layer-cloud4')
-                this.shadowRoot.querySelector('.heading').classList.add('heading-cloud4')
-                this.shadowRoot.querySelector('.body').classList.add('body-cloud4')
+                this.shadowRoot.querySelector('.text-layer').classList.add('text-layer-cloud4');
+                this.shadowRoot.querySelector('.heading').classList.add('heading-cloud4');
+                this.shadowRoot.querySelector('.body').classList.add('body-cloud4');
                 break;
             default:
                 break;

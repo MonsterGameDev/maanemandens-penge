@@ -89,32 +89,18 @@ class ClippedImage extends HTMLElement {
     }
 
     render() {
-
-        console.log('render', imageClippedTemplate.innerHTML)
         switch (this._config.clipPath) {
             case 'cloud1':
-                // console.log('cloud1: ', imageClippedTemplate.innerHTML);
-                // console.log('***************************')
                 this.imageClippedTemplate.innerHTML += cloud1;
-                // console.log('cloud1: ', imageClippedTemplate.innerHTML);
                 break;
             case 'cloud2':
-                // console.log('cloud2: ', imageClippedTemplate.innerHTML);
-                // console.log('***************************')
                 this.imageClippedTemplate.innerHTML += cloud2;
-                // console.log('cloud2: ', imageClippedTemplate.innerHTML);
                 break;
             case 'cloud3':
-                // console.log('cloud3: ', imageClippedTemplate.innerHTML);
-                // console.log('***************************')
                 this.imageClippedTemplate.innerHTML += cloud3;
-                //console.log('cloud3: ', imageClippedTemplate.innerHTML);
                 break;
             case 'cloud4':
-                // console.log('cloud4: ', imageClippedTemplate.innerHTML);
-                // console.log('***************************')
                 this.imageClippedTemplate.innerHTML += cloud4;
-                // console.log('cloud4: ', imageClippedTemplate.innerHTML);
                 break;
             default:
                 break;
