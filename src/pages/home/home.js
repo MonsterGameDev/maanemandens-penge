@@ -6,9 +6,12 @@ import './../../web-components/moon-menu-component.js'
 import './../../services/animations.js';
 
 
-import * as PROJECT_IMAGES from './../../img/projekter/bygge-projekt'
-import * as IMAGES from './../../img/home/'
-import * as FORESTILLINGER_IMAGES from './../../img/forestillinger/'
+import * as PROJECT_IMAGES from './../../img/projekter/bygge-projekt';
+import * as IMAGES from './../../img/home/';
+import * as FORESTILLINGER_IMAGES from './../../img/forestillinger/';
+import * as OM_OS_IMAGES from './../../img/foreningen';
+import * as PROJEKTER_IMAGES from './../../img/projekter/mauriske-proscenium';
+import * as SHOP_IMAGES from './../../img/shop';
 import { bounceAnim } from './../../services/animations.js';
 
 let scrollHandAnimation;
@@ -107,6 +110,120 @@ window.addEventListener('DOMContentLoaded', () => {
     cloud2Text.config = {
         clipPath: 'cloud4'
     }
+
+    // DECK 4
+    // Image SloudClippath
+    const cloud3Image = document.querySelector('ph-image-clipped#om-os');
+    cloud3Image.config = {
+        imageUrl: OM_OS_IMAGES.HOLDET,
+        clipPath: 'cloud4'
+    }
+    // Text Cloud
+    const cloud3Text = document.querySelector('ph-text-cloud#om-os-text');
+
+    cloud3Text.config = {
+        clipPath: 'cloud2'
+    }
+
+    // DECK 5
+    // Image SloudClippath
+    const cloud4Image = document.querySelector('ph-image-clipped#projekter');
+    cloud4Image.config = {
+        imageUrl: PROJEKTER_IMAGES.BANNER,
+        clipPath: 'cloud1'
+    }
+    // Text Cloud
+    const cloud4Text = document.querySelector('ph-text-cloud#projekter-text');
+
+    cloud4Text.config = {
+        clipPath: 'cloud4'
+    }
+
+    // DECK 6
+    // Image SloudClippath
+    const cloud5Image = document.querySelector('ph-image-clipped#shop');
+    cloud5Image.config = {
+        imageUrl: SHOP_IMAGES.FIGURER_2,
+        clipPath: 'cloud2'
+    }
+    // Text Cloud
+    const cloud5Text = document.querySelector('ph-text-cloud#shop-text');
+
+    cloud5Text.config = {
+        clipPath: 'cloud3'
+    }
+
+    //*******************************************************
+    // **** ------- INTERSECTION OBSERVERS -------- *********
+    //*******************************************************
+
+    const deck2Observer = document.querySelector('.second-deck .cloud-container');
+    const deck3Observer = document.querySelector('.third-deck .cloud-container');
+    const deck4Observer = document.querySelector('.fourth-deck .cloud-container');
+    const deck5Observer = document.querySelector('.fifth-deck .cloud-container');
+    const deck6Observer = document.querySelector('.sixth-deck .cloud-container');
+    console.log(deck2Observer);
+
+    const cloudIntersectionOptions = {
+        rootMargin: '0%',
+        threshold: .6,
+    };
+
+    const deck2$ = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                cloud1Image.classList.remove('from-left');
+                cloud1Text.classList.remove('from-top');
+            }
+        })
+    }, cloudIntersectionOptions);
+
+    deck2$.observe(deck2Observer);
+
+    const deck3$ = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                cloud2Image.classList.remove('from-right');
+                cloud2Text.classList.remove('from-top')
+            }
+        })
+    }, cloudIntersectionOptions);
+
+    deck3$.observe(deck3Observer);
+
+    const deck4$ = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                cloud3Image.classList.remove('from-right');
+                cloud3Text.classList.remove('from-bottom');
+
+            }
+        })
+    }, cloudIntersectionOptions);
+
+    deck4$.observe(deck4Observer);
+
+    const deck5$ = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                cloud4Image.classList.remove('from-left');
+                cloud4Text.classList.remove('from-top');
+            }
+        })
+    }, cloudIntersectionOptions);
+
+    deck5$.observe(deck5Observer);
+
+    const deck6$ = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                cloud5Image.classList.remove('from-right');
+                cloud5Text.classList.remove('from-top');
+            }
+        })
+    }, cloudIntersectionOptions);
+
+    deck6$.observe(deck6Observer);
 });
 
 
