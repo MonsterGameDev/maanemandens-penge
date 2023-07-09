@@ -5,8 +5,19 @@
 }
 @font-face {
   font-family: "Roboto";
+  src: url("/src/fonts/roboto/Roboto-Italic.ttf") format("truetype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("/src/fonts/roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto";
   src: url("/src/fonts/roboto/Roboto-MediumItalic.ttf") format("truetype");
   font-style: italic;
+  font-weight: 400;
 }
 @font-face {
   font-family: "Roboto";
