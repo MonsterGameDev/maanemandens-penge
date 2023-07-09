@@ -2,11 +2,13 @@ import './home.scss';
 import './../../web-components/cloud-clippath-on-image.js';
 import './../../web-components/cloud-with-text.component.js';
 import './../../web-components/cta-button.js';
+import './../../web-components/moon-menu-component.js'
 import './../../services/animations.js';
 
 
 import * as PROJECT_IMAGES from './../../img/projekter/bygge-projekt'
 import * as IMAGES from './../../img/home/'
+import * as FORESTILLINGER_IMAGES from './../../img/forestillinger/'
 import { bounceAnim } from './../../services/animations.js';
 
 let scrollHandAnimation;
@@ -16,21 +18,24 @@ let scrollHandAnimation;
 // window.addEventListener('beforeunload', function () {
 //     window.scrollTo(0, 0);
 // });
-
+const suffit = document.querySelector('.top-curtain');
+const drapperiL = document.querySelector('.left-curtain');
+const drapperiR = document.querySelector('.right-curtain');
 window.addEventListener('DOMContentLoaded', () => {
+
+    setTimeout(() => {
+        document.querySelector('html').classList.remove('no-transition');
+        document.querySelector('body').classList.add('show');
+    }, 500);
+
 
     // DECK 1
     // Images
     const logo = document.getElementById('logo');
     logo.src = IMAGES.YELLOW_LOGO;
 
-    const fullMoon = document.getElementById('full-moon');
-    fullMoon.src = IMAGES.FULLMOON;
-
     const scrollHand = document.getElementById('scroll-hand');
     scrollHand.src = IMAGES.SCROLLHAND;
-
-
 
     // Animations
     scrollHandAnimation = bounceAnim(scrollHand);
@@ -55,6 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const showBouncingHandOptions = {
         threshold: .91,
     }
+
     const showBouncingHand$ = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -66,24 +72,43 @@ window.addEventListener('DOMContentLoaded', () => {
     showBouncingHand$.observe(document.querySelector('.first-deck'))
 
 
-    // DECK 2 - første sky
-    const cloud1Image = document.querySelector('ph-image-clipped');
+
+
+
+
+
+    // DECK 2
+
+    // Image CloudClippath
+    const cloud1Image = document.querySelector('ph-image-clipped#workshops');
     cloud1Image.config = {
         imageUrl: PROJECT_IMAGES.IMG_11,
         clipPath: 'cloud2'
     }
 
-    // første textsky
-    const cloud1Text = document.querySelector('ph-text-cloud');
+    // text cloud
+    const cloud1Text = document.querySelector('ph-text-cloud#workshops-text');
 
     cloud1Text.config = {
         clipPath: 'cloud1'
     }
 
+
+    // DECK 3
+    // Image SloudClippath
+    const cloud2Image = document.querySelector('ph-image-clipped#forestillinger');
+    cloud2Image.config = {
+        imageUrl: FORESTILLINGER_IMAGES.DAEKKET,
+        clipPath: 'cloud3'
+    }
+    // Text Cloud
+    const cloud2Text = document.querySelector('ph-text-cloud#forestillinger-text');
+
+    cloud2Text.config = {
+        clipPath: 'cloud4'
+    }
 });
-const suffit = document.querySelector('.top-curtain');
-const drapperiL = document.querySelector('.left-curtain');
-const drapperiR = document.querySelector('.right-curtain');
+
 
 window.addEventListener('scroll', (e) => {
     const pos = window.scrollY;
@@ -94,3 +119,4 @@ window.addEventListener('scroll', (e) => {
     suffit.style.transform = `translateY(-${pos - 60}px)`;
 
 });
+

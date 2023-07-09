@@ -1,49 +1,21 @@
-const textCloudTemplate = document.createElement('template');
-textCloudTemplate.innerHTML = `
-    <style>
-        * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        }
-        :host {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        }
-        .text-layer {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            margin-top: -1.8vw;
-        }
-        .heading {
-            font-size: 3vw;
-            text-transform: uppercase;
-            margin-bottom: 1.3vw;
-            font-family: var(--cloud-text-heading);
-            font-weight: 100;
-        }
-        .body {
-            width: 70%;
-            margin-bottom: 1.5vw;
-            text-align: center;
-            font-size: 1.15vw;
-            font-weight:normal;
-            font-family: var(--cloud-text-body);
-        }
-        .cta {}
-    </style>
-    <div class="text-layer">
-        <h2 class="heading"><slot name="heading"></slot></h2>
-        <div class="body"><slot name="body"></slot></div>
-        <div class="cta"><slot name="cta"></slot></div>
-    </div>
-    `
+/*
+**PROPERTIES
+config = { 
+    clipPath: cloud1 | cloud2 | cloud3 | cloud4
+}  
+**ATTRIBUTES
+**SLOTS
+ - heading
+ - body
+ - cta
+**CSS-PROPS
+--cloud-text-heading (font-family)
+--cloud-text-body (font-family)
+*/
+
+
+
+
 const cloud1 = `<svg viewBox="0 0 755 513" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
     <path d="M172.884386,128.964385 C175.08523,82.0364402 212.255993,47.7088382 292.048744,73.6354817 C369.021441,-19.5588228 538.620636,18.2032086 568.975511,114.088648 C752.669363,108.095121 735.870897,326.264851 604.561059,337.613766 C600.497453,372.919676 566.118746,404.282318 493.277276,384.41686 C433.396542,457.342791 269.383887,453.171817 247.598946,337.613766 C59.5887971,423.253054 -44.7685457,149.095448 172.884386,128.964385 Z" id="path-1"></path>
@@ -147,29 +119,105 @@ class TextCloud extends HTMLElement {
 
     constructor() {
         super();
+
+        this.textCloudTemplate = document.createElement('template');
+        this.textCloudTemplate.innerHTML = `
+    <style>
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+        :host {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        }
+        .text-layer {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            margin-top: -1.8vw;
+        }
+        .heading {
+            font-size: 3vw;
+            text-transform: uppercase;
+            margin-bottom: 1.3vw;
+            font-family: var(--cloud-text-heading);
+            font-weight: 100;
+        }
+        .body {
+            width: 70%;
+            margin-bottom: 1.5vw;
+            text-align: center;
+            font-size: 1.6vw;
+            font-weight:normal;
+            font-family: var(--cloud-text-body);
+        }
+        .cta {}
+
+        /* CLOUD 4 */
+        .text-layer-cloud4 {
+            margin-top: 5vw;
+        }
+        .heading-cloud4 {
+            margin-bottom: 3vw;
+        }
+        .body-cloud4 {
+            margin-bottom: 4.2vw;
+        }
+    </style>
+    <div class="text-layer">
+        <h2 class="heading"><slot name="heading"></slot></h2>
+        <div class="body"><slot name="body"></slot></div>
+        <div class="cta"><slot name="cta"></slot></div>
+    </div>
+    `
     }
+
 
     render() {
         switch (this._config.clipPath) {
             case 'cloud1':
-                textCloudTemplate.innerHTML += cloud1;
+                this.textCloudTemplate.innerHTML += cloud1;
                 break;
             case 'cloud2':
-                textCloudTemplate.innerHTML += cloud2;
+                this.textCloudTemplate.innerHTML += cloud2;
                 break;
             case 'cloud3':
-                textCloudTemplate.innerHTML += cloud3;
+                this.textCloudTemplate.innerHTML += cloud3;
                 break;
             case 'cloud4':
-                textCloudTemplate.innerHTML += cloud4;
+                this.textCloudTemplate.innerHTML += cloud4;
                 break;
             default:
                 break;
 
         }
 
-        const templateContent = textCloudTemplate.content;
+        const templateContent = this.textCloudTemplate.content;
         this.attachShadow({ mode: 'open' }).appendChild(templateContent.cloneNode(true));
+
+        switch (this._config.clipPath) {
+            case 'cloud1':
+                break;
+            case 'cloud2':
+                break;
+            case 'cloud3':
+                break;
+            case 'cloud4':
+                this.shadowRoot.querySelector('.text-layer').classList.add('text-layer-cloud4')
+                this.shadowRoot.querySelector('.heading').classList.add('heading-cloud4')
+                this.shadowRoot.querySelector('.body').classList.add('body-cloud4')
+                break;
+            default:
+                break;
+
+        }
     }
 
 }
