@@ -36,24 +36,11 @@ html {
 }
 
 body {
-  #full-moon {
-    position: fixed;
-    top: 3rem;
-    right: 3rem;
+  transition: opacity 1s ease-out;
 
-    box-shadow: 0 0 50px gold, 0 0 150px gold;
-    border-radius: 50%;
-    &::before {
-      content: "HELLO";
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: red;
-      width: 100px;
-      height: 100px;
-      z-index: 1000;
-      display: inline-block;
-    }
+  //   box-shadow: 0 0 50px gold, 0 0 150px gold;
+  ph-moon-menu {
+    z-index: 2;
   }
 
   #scroll-hand {
@@ -76,6 +63,8 @@ body {
       top: -1rem;
       width: 100%;
       height: 100vh;
+
+      pointer-events: none;
     }
 
     .top-curtain {
@@ -147,7 +136,7 @@ body {
 
       width: 80%;
       aspect-ratio: 16/10;
-      
+
       ph-image-clipped {
         width: 85%;
         height: fit-content;
@@ -171,14 +160,61 @@ body {
 
   .third-deck {
     height: 100vh;
-    background: green;
-  }
 
-  // animation classes
-  .hide {
-    opacity: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cloud-container {
+      position: absolute;
+      display: inline-block;
+
+      width: 80%;
+      aspect-ratio: 16/10;
+
+      ph-image-clipped {
+        width: 85%;
+        height: fit-content;
+        position: absolute;
+        top: 3%;
+        left: 21%;
+        z-index: 10;
+      }
+
+      ph-text-cloud {
+        width: 63%;
+        height: fit-content;
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+        z-index: 11;
+      }
+    }
   }
-  .show {
-    opacity: 1 !important;
+}
+
+// animation classes
+.hide {
+  opacity: 0 !important;
+}
+.show {
+  opacity: 1 !important;
+}
+
+@media only screen and (max-width: 1200px) {
+  .cloud-container {
+    width: 100% !important;
   }
+}
+
+/* Large (large laptop) */
+@media only screen and (max-width: 992px) {
+}
+
+/* Medium (small laptop) */
+@media only screen and (max-width: 768px) {
+}
+
+/* Extra small (mobile) */
+@media only screen and (max-width: 552px) {
 }

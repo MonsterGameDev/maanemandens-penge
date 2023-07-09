@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-transition">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body>
-    <img id="full-moon" />
+  <body class="hide">
+    <!-- <img id="full-moon" />  -->
+    <ph-moon-menu></ph-moon-menu>
     <img id="scroll-hand" />
     <div class="first-deck">
       <div class="curtain top-curtain"></div>
@@ -24,8 +25,8 @@
 
     <div class="second-deck">
       <div class="cloud-container">
-        <ph-image-clipped></ph-image-clipped>
-        <ph-text-cloud>
+        <ph-image-clipped id="workshops"></ph-image-clipped>
+        <ph-text-cloud id="workshops-text">
           <span slot="heading">Workshops</span>
           <span slot="body">
             "Byg dit eget dukketeater og tag det med hjem" er vores mest
@@ -39,8 +40,24 @@
         </ph-text-cloud>
       </div>
     </div>
+
     <div class="third-deck">
-      <ph-cta-button> Deltag i workshop </ph-cta-button>
+      <div class="cloud-container">
+        <ph-image-clipped id="forestillinger"></ph-image-clipped>
+        <ph-text-cloud id="forestillinger-text">
+          <span slot="heading">Forestillinger</span>
+          <span slot="body">
+            Månemandens Penge opfører naturligvis også rigtige dukketeater
+            forestillinger. Pt. har vi Skatteøen af Robert Louis Stevenson, egen
+            fortolkning af Sharlings Nøddebo Præstegård, og inden længe kan vi
+            også føje den fantastiske Alexandre Dúmas´ De tre Musketerer. Vi
+            spiller til kulturelle arrangementer,festivaller og private fester.
+          </span>
+          <span slot="cta">
+            <ph-cta-button>Se programmet </ph-cta-button>
+          </span>
+        </ph-text-cloud>
+      </div>
     </div>
   </body>
 </html>
