@@ -1,3 +1,7 @@
+html {
+  visibility: hidden;
+  opacity: 0;
+}
 @import "./../../main.scss";
 
 .main {
@@ -39,4 +43,9 @@
   ph-shop-item {
     width: 100% !important;
   }
+}
+
+html {
+  visibility: visible;
+  opacity: 1;
 }

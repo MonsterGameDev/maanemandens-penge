@@ -1,3 +1,7 @@
+html {
+  visibility: hidden;
+  opacity: 0;
+}
 @import "./../../main.scss";
 :root {
   --article-banner-image: url(/src/img/foreningen/holdet.jpg);
@@ -54,4 +58,9 @@
       //   );
     }
   }
+}
+
+html {
+  visibility: visible;
+  opacity: 1;
 }

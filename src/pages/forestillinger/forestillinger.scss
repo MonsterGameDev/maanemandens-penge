@@ -1,3 +1,8 @@
+html {
+  visibility: hidden;
+  opacity: 0;
+}
+
 @import "./../../main.scss";
 
 .main {
@@ -24,4 +29,9 @@
       font-size: 1.3rem;
     }
   }
+}
+
+html {
+  visibility: visible;
+  opacity: 1;
 }

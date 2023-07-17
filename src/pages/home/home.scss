@@ -1,3 +1,7 @@
+html {
+  visibility: hidden;
+  opacity: 0;
+}
 @import "./../../fonts/font";
 
 * {
@@ -53,11 +57,25 @@ body {
     transition: opacity 1s 0.2s ease-out;
   }
 
+  .scroll-container {
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+  }
+
+  .scroll-container,
+  .deck {
+    height: 100vh;
+  }
+
+  .deck {
+    scroll-snap-align: start;
+  }
+
   .deck {
     position: relative;
     width: 100%;
     aspect-ratio: 16/9;
-    min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,7 +161,7 @@ body {
   .second-deck {
     .cloud-container {
       ph-image-clipped {
-        transition: all 1.2s ease-out;
+        transition: all 0.8s 0.2s ease-out;
         width: 85%;
         height: fit-content;
         margin-top: -10%;
@@ -154,7 +172,7 @@ body {
       }
 
       ph-text-cloud {
-        transition: opacity 1.2s ease-out, transform 1s 1s ease-out;
+        transition: all 0.8s 0.3s ease-out; //, transform 1s 1s ease-out;
         width: 63%;
         height: fit-content;
         position: absolute;
@@ -178,7 +196,7 @@ body {
       }
 
       ph-text-cloud {
-        transition: opacity 1.2s ease-out, transform 1s 1s ease-out;
+        transition: all 0.8s ease-out;
         width: 63%;
         height: fit-content;
         position: absolute;
@@ -202,7 +220,7 @@ body {
       }
 
       ph-text-cloud {
-        transition: opacity 1.2s ease-out, transform 1s 1s ease-out;
+        transition: all 0.8s ease-out;
         width: 65%;
         height: fit-content;
         position: absolute;
@@ -216,7 +234,7 @@ body {
   .fifth-deck {
     .cloud-container {
       ph-image-clipped {
-        transition: all 1.2s ease-out;
+        transition: all 1.2s 0.2s ease-out;
         width: 85%;
         height: fit-content;
         position: absolute;
@@ -226,7 +244,7 @@ body {
       }
 
       ph-text-cloud {
-        transition: opacity 1.2s ease-out, transform 1s 1s ease-out;
+        transition: all 0.8s 0.3s ease-out;
         width: 75%;
         height: fit-content;
         position: absolute;
@@ -240,7 +258,7 @@ body {
   .sixth-deck {
     .cloud-container {
       ph-image-clipped {
-        transition: all 1.2s ease-out;
+        transition: all 0.8s 0.2s ease-out;
         width: 85%;
         height: fit-content;
         position: absolute;
@@ -250,7 +268,7 @@ body {
       }
 
       ph-text-cloud {
-        transition: opacity 1.2s ease-out, transform 1s 1s ease-out;
+        transition: all 0.8s 0.3s ease-out, transform 1s 1s ease-out;
         width: 65%;
         height: fit-content;
         position: absolute;
@@ -300,4 +318,9 @@ body {
 
 /* Extra small (mobile) */
 @media only screen and (max-width: 552px) {
+}
+
+html {
+  visibility: visible;
+  opacity: 1;
 }
