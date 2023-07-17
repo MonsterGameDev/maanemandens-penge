@@ -21,6 +21,16 @@ ctaButtonTemplate.innerHTML = `
             font-size: var(--cta-button-font-size, 1.5vw);
             letter-spacing: .2vw;
             border: 0;
+            transition: all .2s;
+            cursor: pointer;
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 2vw 1vw rgb(0 0 0 / 0.2);
+        }
+        button:active {
+            transform: translateY(-2px);
+            box-shadow: 0 1.6vw 1vw rgb(0 0 0 / 0.2);
         }
     </style>
     <button><slot></slot></button>`
