@@ -18,13 +18,20 @@ let scrollHandAnimation;
 
 
 // scroll to top on refresh
-// window.addEventListener('beforeunload', function () {
-//     window.scrollTo(0, 0);
-// });
+window.addEventListener('beforeunload', function () {
+    window.scrollTo(0, 0);
+});
+
 const suffit = document.querySelector('.top-curtain');
 const drapperiL = document.querySelector('.left-curtain');
 const drapperiR = document.querySelector('.right-curtain');
+
 window.addEventListener('DOMContentLoaded', () => {
+
+    document.querySelector('.scroll-container').addEventListener('scroll', () => {
+        scrollY = document.querySelector('.scroll-container').scrollTop;
+        console.log(scrollY)
+    });
 
     setTimeout(() => {
         document.querySelector('html').classList.remove('no-transition');
@@ -167,12 +174,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const cloudIntersectionOptions = {
         rootMargin: '0%',
         threshold: .6,
+
     };
 
     const deck2$ = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                cloud1Image.classList.remove('from-left');
+                cloud1Image.classList.remove('hide');
                 cloud1Text.classList.remove('from-top');
             }
         })
@@ -183,7 +191,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const deck3$ = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                cloud2Image.classList.remove('from-right');
+                cloud2Image.classList.remove('hide');
                 cloud2Text.classList.remove('from-top')
             }
         })
@@ -194,7 +202,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const deck4$ = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                cloud3Image.classList.remove('from-right');
+                cloud3Image.classList.remove('hide');
                 cloud3Text.classList.remove('from-bottom');
 
             }
@@ -206,7 +214,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const deck5$ = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                cloud4Image.classList.remove('from-left');
+                cloud4Image.classList.remove('hide');
                 cloud4Text.classList.remove('from-top');
             }
         })
@@ -217,7 +225,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const deck6$ = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                cloud5Image.classList.remove('from-right');
+                cloud5Image.classList.remove('hide');
                 cloud5Text.classList.remove('from-top');
             }
         })
@@ -227,7 +235,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-window.addEventListener('scroll', (e) => {
+document.querySelector('.scroll-container').addEventListener('scroll', (e) => {
     const pos = window.scrollY;
     drapperiL.style.transform = `translateX(-${pos}px)`;
     drapperiR.style.transform = `scaleX(-1) translateX(-${pos}px)`;
@@ -236,4 +244,14 @@ window.addEventListener('scroll', (e) => {
     suffit.style.transform = `translateY(-${pos - 60}px)`;
 
 });
+
+function transition(url) {
+    console.log(url);
+    document.querySelector('body').classList.remove('show');
+    setTimeout(() => {
+        window.location.href = url;
+    }, 1000);
+};
+
+
 
