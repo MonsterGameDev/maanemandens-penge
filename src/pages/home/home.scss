@@ -60,6 +60,7 @@ body {
   .scroll-container {
     overflow: auto;
     scroll-snap-type: y mandatory;
+    // scroll-behavior: smooth;
   }
 
   .scroll-container,
@@ -69,6 +70,7 @@ body {
 
   .deck {
     scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .deck {
