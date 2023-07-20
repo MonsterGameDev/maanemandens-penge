@@ -93,6 +93,7 @@ moonMenuTemplate.innerHTML = `
             text-transform: uppercase;
             display: inline-block;
             pointer-events: all;
+            cursor: pointer;
            
         }
         .nav-container nav ul li a:hover{
